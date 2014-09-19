@@ -27,9 +27,12 @@
 *.i*86
 *.x86_64
 *.hex
+
+# Project
 Board_FRDM/Documentation/
 Board_FRDM/Generated_Code/
+Board_FRDM/Static_Code/
 Board_FRDM/Debug/
-Board_FRDM/.cwGeneratedFileSetLog
 *.g_c
 *.g_x
+*.cwGeneratedFileSetLog
