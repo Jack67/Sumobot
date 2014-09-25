@@ -50,6 +50,8 @@
   </PATHS>
   <FILES>
     <GeneratedCs>
+      <PathName>C:\Users\Michael Müller\Documents\Studium\Semester_5\INTRO\GIT_INTRO\INTRO_Sumobot\Board_FRDM\Generated_Code\Bit1.c</PathName>
+      <PathName>C:\Users\Michael Müller\Documents\Studium\Semester_5\INTRO\GIT_INTRO\INTRO_Sumobot\Board_FRDM\Generated_Code\BitIoLdd1.c</PathName>
       <PathName>C:\Users\Michael Müller\Documents\Studium\Semester_5\INTRO\GIT_INTRO\INTRO_Sumobot\Board_FRDM\Generated_Code\Cpu.c</PathName>
       <PathName>C:\Users\Michael Müller\Documents\Studium\Semester_5\INTRO\GIT_INTRO\INTRO_Sumobot\Board_FRDM\Generated_Code\PE_LDD.c</PathName>
       <PathName>C:\Users\Michael Müller\Documents\Studium\Semester_5\INTRO\GIT_INTRO\INTRO_Sumobot\Board_FRDM\Generated_Code\Vectors.c</PathName>
@@ -58,6 +60,8 @@
       <PathName>C:\Users\Michael Müller\Documents\Studium\Semester_5\INTRO\GIT_INTRO\INTRO_Sumobot\Board_FRDM\Sources\main.c</PathName>
     </GeneratedCs>
     <GeneratedHs>
+      <PathName>C:\Users\Michael Müller\Documents\Studium\Semester_5\INTRO\GIT_INTRO\INTRO_Sumobot\Board_FRDM\Generated_Code\Bit1.h</PathName>
+      <PathName>C:\Users\Michael Müller\Documents\Studium\Semester_5\INTRO\GIT_INTRO\INTRO_Sumobot\Board_FRDM\Generated_Code\BitIoLdd1.h</PathName>
       <PathName>C:\Users\Michael Müller\Documents\Studium\Semester_5\INTRO\GIT_INTRO\INTRO_Sumobot\Board_FRDM\Generated_Code\Cpu.h</PathName>
       <PathName>C:\Users\Michael Müller\Documents\Studium\Semester_5\INTRO\GIT_INTRO\INTRO_Sumobot\Board_FRDM\Generated_Code\IO_Map.h</PathName>
       <PathName>C:\Users\Michael Müller\Documents\Studium\Semester_5\INTRO\GIT_INTRO\INTRO_Sumobot\Board_FRDM\Generated_Code\PE_Const.h</PathName>
