@@ -8,9 +8,6 @@
 #ifndef LED_H_
 #define LED_H_
 
-#include "LED_Red.h"
-#include "LED_Green.h"
-#include "LED_Blue.h"
 
 
 void LED_Red_On(void);
