@@ -63,7 +63,18 @@ int main(void)
   #endif
   /*** End of RTOS startup code.  ***/
   /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-  for(;;){}
+  for(;;){
+
+	  LED_Red_On();
+	  LED_Red_Off();
+
+	  LED_Blue_On();
+	  LED_Blue_Off();
+
+	  LED_Green_On();
+	  LED_Green_Off();
+
+  }
   /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
 } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 
