@@ -40,6 +40,7 @@
 #include "BitIoLdd2.h"
 #include "LED_Blue.h"
 #include "BitIoLdd3.h"
+#include "WAIT.h"
 
 #ifdef __cplusplus
 extern "C" {

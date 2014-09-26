@@ -36,6 +36,7 @@
 #include "BitIoLdd2.h"
 #include "LED_Blue.h"
 #include "BitIoLdd3.h"
+#include "WAIT.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -60,14 +61,14 @@ int main(void)
   for(;;){
 
 	  LED_Red_On();
+	  WAIT_Waitms(100);
 	  LED_Red_Off();
-
 	  LED_Blue_On();
+	  WAIT_Waitms(100);
 	  LED_Blue_Off();
-
 	  LED_Green_On();
+	  WAIT_Waitms(100);
 	  LED_Green_Off();
-
   }
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
@@ -76,9 +77,7 @@ int main(void)
   #endif
   /*** End of RTOS startup code.  ***/
   /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-  for(;;){
-
-  }
+  for(;;){}
   /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
 } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 

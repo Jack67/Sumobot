@@ -36,3 +36,10 @@ Board_FRDM/Debug/
 *.g_c
 *.g_x
 *.cwGeneratedFileSetLog
+*.html
+*.css
+*.md5
+*.png
+*.map
+*.js
+Board_FRDM/Doxygen/html/installdox
