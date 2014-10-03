@@ -2,9 +2,9 @@
 <PEproject>
   <Header>
     <Name>BOARD_FRDM</Name>
-    <SavedBy>Michael Müller</SavedBy>
-    <ModificationStamp>8</ModificationStamp>
-    <Date>2014-09-26</Date>
+    <SavedBy>Elia</SavedBy>
+    <ModificationStamp>9</ModificationStamp>
+    <Date>2014-10-03</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.10.0.RT6_b1428-0121</PEversion>
   </Header>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>22</ProjectCompNumb>
+    <ProjectCompNumb>25</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>

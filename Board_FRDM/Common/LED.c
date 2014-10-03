@@ -26,12 +26,12 @@ void LED_Red_Neg(void)
 	LED_Red_NegVal();
 }
 
-bool LED_Red_Get(void)
+char LED_Red_Get(void)
 {
 	return !LED_Red_GetVal();
 }
 
-void LED_Red_Put(bool b)
+void LED_Red_Put(char b)
 {
 	LED_Red_PutVal(!b);
 }
@@ -60,12 +60,12 @@ void LED_Blue_Neg(void)
 	LED_Blue_NegVal();
 }
 
-bool LED_Blue_Get(void)
+char LED_Blue_Get(void)
 {
 	return !LED_Blue_GetVal();
 }
 
-void LED_Blue_Put(bool b)
+void LED_Blue_Put(char b)
 {
 	LED_Blue_PutVal(!b);
 }
@@ -97,12 +97,12 @@ void LED_Green_Neg(void)
 	LED_Green_NegVal();
 }
 
-bool LED_Green_Get(void)
+char LED_Green_Get(void)
 {
 	return !LED_Green_GetVal();
 }
 
-void LED_Green_Put(bool b)
+void LED_Green_Put(char b)
 {
 	LED_Green_PutVal(b);
 }
