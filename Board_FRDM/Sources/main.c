@@ -60,6 +60,8 @@ int main(void)
 
   for(;;){
 
+	  EnterCritical();
+
 	  LED_Red_On();
 	  WAIT_Waitms(100);
 	  LED_Red_Off();
@@ -69,6 +71,8 @@ int main(void)
 	  LED_Green_On();
 	  WAIT_Waitms(100);
 	  LED_Green_Off();
+
+	  ExitCritical();
   }
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
