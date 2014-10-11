@@ -17,8 +17,9 @@ void TMR_OnInterrupt(void) {
 	counter++;
 	if(counter > 1000/TMR_TICK_MS)
 	{
+		//alle 1s
 		counter = 0;
-		LED_Red_Neg();
+		//LED_Red_Neg();
 	}
 
 }

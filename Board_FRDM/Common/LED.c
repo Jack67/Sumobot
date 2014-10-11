@@ -104,7 +104,7 @@ char LED_Green_Get(void)
 
 void LED_Green_Put(char b)
 {
-	LED_Green_PutVal(b);
+	LED_Green_PutVal(!b);
 }
 
 void LED_Green_Init(void)

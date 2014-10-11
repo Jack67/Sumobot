@@ -11,11 +11,11 @@
 #include "PE_Types.h" //bool -> unsigned char
 #include <stddef.h> //includes NULL
 
-#include "LED.h"
-
 
 #define PL_HAS_EVENTS 1
 #define PL_HAS_TIMER 1
+#define PL_HAS_KEYS 1
+#define PL_NOF_KEYS 7
 
 
 void platform_Init(void);

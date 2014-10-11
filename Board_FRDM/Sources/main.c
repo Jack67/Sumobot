@@ -42,6 +42,20 @@
 #include "TI1.h"
 #include "TimerIntLdd1.h"
 #include "TU1.h"
+#include "SW1.h"
+#include "BitIoLdd4.h"
+#include "SW2.h"
+#include "BitIoLdd5.h"
+#include "SW3.h"
+#include "BitIoLdd6.h"
+#include "SW4.h"
+#include "BitIoLdd7.h"
+#include "SW5.h"
+#include "BitIoLdd8.h"
+#include "SW6.h"
+#include "BitIoLdd9.h"
+#include "SW7.h"
+#include "BitIoLdd10.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -50,6 +64,11 @@
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "../Common/Platform.h"
 #include "../Common/Event.h"
+#include "../Common/Keys.h"
+#include "../Common/LED.h"
+#include "../Common/Timer.h"
+
+void OnEvent(EVNT_Handle);
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
@@ -63,24 +82,64 @@ int main(void)
   /* Write your code here */
   /* For example: for(;;) { } */
   platform_Init();
+  EVNT_Init();
+  KEY_Init();
+  LED_Blue_Init();
+  LED_Green_Init();
+  LED_Red_Init();
+  TMR_Init();
 
   for(;;){
-
-	  /*EnterCritical();
-
-	  LED_Red_On();
-	  WAIT_Waitms(100);
-	  LED_Red_Off();
-	  LED_Blue_On();
-	  WAIT_Waitms(100);
-	  LED_Blue_Off();
-	  LED_Green_On();
-	  WAIT_Waitms(100);
-	  LED_Green_Off();
-
-	  ExitCritical();
-*/
+	  KEY_Scan();
+	  EVNT_HandleEvent(&OnEvent);
   }
+}
+
+void OnEvent(EVNT_Handle ev)
+{
+	switch(ev)
+	{
+	case EVNT_SW1_PRESSED:
+		LED_Red_On();
+		break;
+	case EVNT_SW2_PRESSED:
+		LED_Blue_On();
+		break;
+	case EVNT_SW3_PRESSED:
+		LED_Green_On();
+		break;
+	case EVNT_SW4_PRESSED:
+		LED_Red_Off();
+		break;
+	case EVNT_SW5_PRESSED:
+		LED_Blue_Off();
+		break;
+	case EVNT_SW6_PRESSED:
+		LED_Green_Off();
+		break;
+	case EVNT_SW7_PRESSED:
+		LED_Red_Neg();
+		break;
+	}
+}
+
+/*EnterCritical();
+
+LED_Red_On();
+WAIT_Waitms(100);
+LED_Red_Off();
+LED_Blue_On();
+WAIT_Waitms(100);
+LED_Blue_Off();
+LED_Green_On();
+WAIT_Waitms(100);
+LED_Green_Off();
+
+ExitCritical();
+*/
+
+void blabla()
+{
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
   #ifdef PEX_RTOS_START

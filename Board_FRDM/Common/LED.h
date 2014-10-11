@@ -8,7 +8,7 @@
 #ifndef LED_H_
 #define LED_H_
 
-
+#include "Platform.h"
 
 void LED_Red_On(void);
 void LED_Red_Off(void);

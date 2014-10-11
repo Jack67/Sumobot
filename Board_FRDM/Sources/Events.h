@@ -46,6 +46,20 @@
 #include "TI1.h"
 #include "TimerIntLdd1.h"
 #include "TU1.h"
+#include "SW1.h"
+#include "BitIoLdd4.h"
+#include "SW2.h"
+#include "BitIoLdd5.h"
+#include "SW3.h"
+#include "BitIoLdd6.h"
+#include "SW4.h"
+#include "BitIoLdd7.h"
+#include "SW5.h"
+#include "BitIoLdd8.h"
+#include "SW6.h"
+#include "BitIoLdd9.h"
+#include "SW7.h"
+#include "BitIoLdd10.h"
 
 #ifdef __cplusplus
 extern "C" {

@@ -17,6 +17,27 @@
 
 typedef enum EVNT_Handle {
   EVNT_INIT,            /*!< System Initialization Event */
+#if PL_NOF_KEYS >= 1
+  EVNT_SW1_PRESSED,
+#endif
+#if PL_NOF_KEYS >= 2
+  EVNT_SW2_PRESSED,
+#endif
+#if PL_NOF_KEYS >= 3
+  EVNT_SW3_PRESSED,
+#endif
+#if PL_NOF_KEYS >= 4
+  EVNT_SW4_PRESSED,
+#endif
+#if PL_NOF_KEYS >= 5
+  EVNT_SW5_PRESSED,
+#endif
+#if PL_NOF_KEYS >= 6
+  EVNT_SW6_PRESSED,
+#endif
+#if PL_NOF_KEYS >= 7
+  EVNT_SW7_PRESSED,
+#endif
   EVNT_NOF_EVENTS       /*!< Must be last one! */
 } EVNT_Handle;
 
