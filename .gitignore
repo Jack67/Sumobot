@@ -43,3 +43,6 @@ Board_FRDM/Debug/
 *.map
 *.js
 Board_FRDM/Doxygen/html/installdox
+Board_SUMOBOT/BOARD_SUMOBOT/Debug/
+Board_SUMOBOT/BOARD_SUMOBOT/Generated_Code/
+Board_SUMOBOT/BOARD_SUMOBOT/Documentation/
