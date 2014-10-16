@@ -9,11 +9,16 @@
 #include "Platform.h"
 #if PL_HAS_TIMER
 #include "Timer.h"
+#include "Trigger.h"
 
 int counter = 0;
 
 void TMR_OnInterrupt(void) {
   /* this one gets called from an interrupt!!!! */
+
+	TRG_IncTick(); //call trigger
+
+
 	counter++;
 	if(counter > 1000/TMR_TICK_MS)
 	{

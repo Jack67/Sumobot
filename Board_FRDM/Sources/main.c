@@ -71,8 +71,10 @@
 #include "../Common/Keys.h"
 #include "../Common/LED.h"
 #include "../Common/Timer.h"
+#include "../Common/Trigger.h"
 
 void OnEvent(EVNT_Handle);
+void OnTriggerBlink(void*);
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
@@ -93,6 +95,7 @@ int main(void)
   LED_Red_Init();
   TMR_Init();
   CLS1_Init();
+  TRG_Init();
 
 
 
@@ -100,7 +103,7 @@ int main(void)
   for(;;){
 	  //CLS1_SendStr("I rule the world" , CLS1_GetStdio()->stdOut);
 	  char c;
-	  if(CLS1_KeyPressed())
+	  if(CLS1_KeyPressed()) //simple echo
 	  {
 		  CLS1_ReadChar(&c);
 		  CLS1_SendChar(c);
@@ -111,6 +114,11 @@ int main(void)
 	  KEY_Scan();
 	  EVNT_HandleEvent(&OnEvent);
   }
+}
+
+void OnTriggerBlink(void* v)
+{
+
 }
 
 void OnEvent(EVNT_Handle ev)

@@ -11,11 +11,17 @@
 #include "PE_Types.h" //bool -> unsigned char
 #include <stddef.h> //includes NULL
 
+#ifdef PL_BOARD_IS_FRDM
+	#define PL_HAS_EVENTS 1
+	#define PL_HAS_TIMER 1
+	#define PL_HAS_KEYS 1
+	#define PL_NOF_KEYS 7
+	#define PL_HAS_TRIGGER 1
+#elif PL_BOARD_IS_FRDM
 
-#define PL_HAS_EVENTS 1
-#define PL_HAS_TIMER 1
-#define PL_HAS_KEYS 1
-#define PL_NOF_KEYS 7
+#endif
+
+
 
 
 void platform_Init(void);
