@@ -6,10 +6,10 @@
  */
 #include "LED.h"
 
-#include "LED_Red.h"
+//#include "LED_Red.h"
 #include "LED_Green.h"
-#include "LED_Blue.h"
-
+//#include "LED_Blue.h"
+/*
 //led red-----------------------------------------------------------
 void LED_Red_On(void)
 {
@@ -79,7 +79,7 @@ void LED_Blue_DeInit(void)
 {
 
 }
-
+*/
 //led green-----------------------------------------------------------
 
 void LED_Green_On(void)
