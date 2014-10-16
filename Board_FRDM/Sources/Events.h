@@ -60,6 +60,10 @@
 #include "BitIoLdd9.h"
 #include "SW7.h"
 #include "BitIoLdd10.h"
+#include "UTIL1.h"
+#include "CLS1.h"
+#include "AS1.h"
+#include "ASerialLdd1.h"
 
 #ifdef __cplusplus
 extern "C" {

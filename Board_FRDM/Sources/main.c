@@ -56,6 +56,10 @@
 #include "BitIoLdd9.h"
 #include "SW7.h"
 #include "BitIoLdd10.h"
+#include "UTIL1.h"
+#include "CLS1.h"
+#include "AS1.h"
+#include "ASerialLdd1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -88,8 +92,22 @@ int main(void)
   LED_Green_Init();
   LED_Red_Init();
   TMR_Init();
+  CLS1_Init();
+
+
+
 
   for(;;){
+	  //CLS1_SendStr("I rule the world" , CLS1_GetStdio()->stdOut);
+	  char c;
+	  if(CLS1_KeyPressed())
+	  {
+		  CLS1_ReadChar(&c);
+		  CLS1_SendChar(c);
+	  }
+
+	  //
+
 	  KEY_Scan();
 	  EVNT_HandleEvent(&OnEvent);
   }
