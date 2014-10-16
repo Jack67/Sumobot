@@ -17,8 +17,14 @@
 	#define PL_HAS_KEYS 1
 	#define PL_NOF_KEYS 7
 	#define PL_HAS_TRIGGER 1
-#elif PL_BOARD_IS_FRDM
+#endif
 
+#ifdef PL_BOARD_IS_ROBOT
+	#define PL_HAS_EVENTS 1
+	#define PL_HAS_TIMER 1
+	#define PL_HAS_KEYS 1
+	#define PL_NOF_KEYS 1
+	#define PL_HAS_TRIGGER 1
 #endif
 
 

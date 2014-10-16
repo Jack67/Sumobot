@@ -30,13 +30,30 @@
 /* Including needed modules to compile this module/procedure */
 #include "Cpu.h"
 #include "Events.h"
+#include "CS1.h"
+#include "WAIT1.h"
+#include "HF1.h"
+#include "LED_Green.h"
+#include "BitIoLdd1.h"
+#include "TI1.h"
+#include "TimerIntLdd1.h"
+#include "TU1.h"
+#include "SW1.h"
+#include "BitIoLdd2.h"
+#include "Buzzer.h"
+#include "BitIoLdd3.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* User includes (#include below this line is not maintained by Processor Expert) */
-
+#include "../../../Board_FRDM/Common/Platform.h"
+#include "../../../Board_FRDM/Common/Event.h"
+#include "../../../Board_FRDM/Common/Keys.h"
+#include "../../../Board_FRDM/Common/LED.h"
+#include "../../../Board_FRDM/Common/Timer.h"
+#include "../../../Board_FRDM/Common/Trigger.h"
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
@@ -49,6 +66,12 @@ int main(void)
 
   /* Write your code here */
   /* For example: for(;;) { } */
+  for(;;){
+	  LED_Green_On();
+	  WAIT1_Waitms(500);
+	  LED_Green_Off();
+	  WAIT1_Waitms(500);
+  }
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
