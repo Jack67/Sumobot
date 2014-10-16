@@ -56,6 +56,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\LED.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Platform.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Timer.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Trigger.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\AS1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\ASerialLdd1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\BitIoLdd1.c</PathName>
@@ -99,6 +100,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\LED.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Platform.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Timer.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Trigger.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\AS1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\ASerialLdd1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\BitIoLdd1.h</PathName>

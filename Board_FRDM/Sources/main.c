@@ -97,12 +97,12 @@ int main(void)
   CLS1_Init();
   TRG_Init();
 
-
+  TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
 
 
   for(;;){
 	  //CLS1_SendStr("I rule the world" , CLS1_GetStdio()->stdOut);
-	  char c;
+	 /* char c;
 	  if(CLS1_KeyPressed()) //simple echo
 	  {
 		  CLS1_ReadChar(&c);
@@ -112,12 +112,14 @@ int main(void)
 	  //
 
 	  KEY_Scan();
-	  EVNT_HandleEvent(&OnEvent);
+	  EVNT_HandleEvent(&OnEvent);*/
   }
 }
 
 void OnTriggerBlink(void* v)
 {
+	LED_Red_Neg();
+	TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
 
 }
 
