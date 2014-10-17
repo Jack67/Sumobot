@@ -6,11 +6,19 @@
  */
 #include "LED.h"
 
-//#include "LED_Red.h"
+#if PL_HAS_LED_RED == 1
+#include "LED_Red.h"
+#endif
+#if PL_HAS_LED_BLUE == 1
+#include "LED_Blue.h"
+#endif
+#if PL_HAS_LED_GREEN == 1
 #include "LED_Green.h"
-//#include "LED_Blue.h"
-/*
+#endif
+
+
 //led red-----------------------------------------------------------
+#if PL_HAS_LED_RED == 1
 void LED_Red_On(void)
 {
 	LED_Red_ClrVal();
@@ -44,7 +52,10 @@ void LED_Red_DeInit(void)
 {
 
 }
+#endif
+
 //led blue-----------------------------------------------------------
+#if PL_HAS_LED_BLUE == 1
 void LED_Blue_On(void)
 {
 	LED_Blue_ClrVal();
@@ -79,9 +90,11 @@ void LED_Blue_DeInit(void)
 {
 
 }
-*/
-//led green-----------------------------------------------------------
+#endif
 
+
+//led green-----------------------------------------------------------
+#if PL_HAS_LED_GREEN == 1
 void LED_Green_On(void)
 {
 	LED_Green_ClrVal();
@@ -115,3 +128,4 @@ void LED_Green_DeInit(void)
 {
 
 }
+#endif;

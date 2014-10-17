@@ -12,19 +12,26 @@
 #include <stddef.h> //includes NULL
 
 #ifdef PL_BOARD_IS_FRDM
-	#define PL_HAS_EVENTS 1
-	#define PL_HAS_TIMER 1
-	#define PL_HAS_KEYS 1
-	#define PL_NOF_KEYS 7
-	#define PL_HAS_TRIGGER 1
-#endif
+	#define PL_HAS_EVENTS 	1
+	#define PL_HAS_TIMER 	1
+	#define PL_HAS_KEYS 	1
+	#define PL_NOF_KEYS 	7
+	#define PL_HAS_TRIGGER 	1
 
-#ifdef PL_BOARD_IS_ROBOT
-	#define PL_HAS_EVENTS 1
-	#define PL_HAS_TIMER 1
-	#define PL_HAS_KEYS 1
-	#define PL_NOF_KEYS 1
-	#define PL_HAS_TRIGGER 1
+	#define PL_HAS_LED_RED	1
+	#define PL_HAS_LED_BLUE	1
+	#define PL_HAS_LED_GREEN	1
+
+#else ifdef PL_BOARD_IS_ROBOT
+	#define PL_HAS_EVENTS 	1
+	#define PL_HAS_TIMER 	1
+	#define PL_HAS_KEYS 	1
+	#define PL_NOF_KEYS 	1
+	#define PL_HAS_TRIGGER 	1
+
+	#define PL_HAS_LED_RED	0
+	#define PL_HAS_LED_BLUE	0
+	#define PL_HAS_LED_GREEN	1
 #endif
 
 
