@@ -40,7 +40,7 @@
 #include "TU1.h"
 #include "SW1.h"
 #include "BitIoLdd2.h"
-#include "Buzzer.h"
+#include "BUZ1.h"
 #include "BitIoLdd3.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
@@ -54,6 +54,10 @@
 #include "../../../Board_FRDM/Common/LED.h"
 #include "../../../Board_FRDM/Common/Timer.h"
 #include "../../../Board_FRDM/Common/Trigger.h"
+#include "../../../Board_FRDM/Common/Buzzer.h"
+
+void OnTriggerBlink(void*);
+
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
@@ -66,12 +70,38 @@ int main(void)
 
   /* Write your code here */
   /* For example: for(;;) { } */
+  platform_Init();
+  EVNT_Init();
+  KEY_Init();
+  //LED_Blue_Init();
+  LED_Green_Init();
+  //LED_Red_Init();
+  TMR_Init();
+  //CLS1_Init();
+  TRG_Init();
+  BUZ_Init();
+
+  BUZ_Beep(1000,1000);
+
+  TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
+
   for(;;){
-	  LED_Green_On();
-	  WAIT1_Waitms(500);
-	  LED_Green_Off();
-	  WAIT1_Waitms(500);
+	  //LED_Green_On();
+	  //WAIT1_Waitms(500);
+	  //LED_Green_Off();
+	  //WAIT1_Waitms(500);
   }
+
+}
+
+void OnTriggerBlink(void* v)
+{
+	LED_Green_Neg();
+	TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
+
+}
+
+void blabla(void){
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/

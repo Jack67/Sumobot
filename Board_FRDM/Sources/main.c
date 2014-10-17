@@ -102,17 +102,15 @@ int main(void)
 
   for(;;){
 	  //CLS1_SendStr("I rule the world" , CLS1_GetStdio()->stdOut);
-	 /* char c;
+	  char c;
 	  if(CLS1_KeyPressed()) //simple echo
 	  {
 		  CLS1_ReadChar(&c);
 		  CLS1_SendChar(c);
 	  }
 
-	  //
-
 	  KEY_Scan();
-	  EVNT_HandleEvent(&OnEvent);*/
+	  EVNT_HandleEvent(&OnEvent);
   }
 }
 

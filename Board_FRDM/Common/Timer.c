@@ -14,7 +14,7 @@
 int counter = 0;
 
 void TMR_OnInterrupt(void) {
-  /* this one gets called from an interrupt!!!! */
+  /* this one gets called from an interrupt all 1ms!!!! */
 
 	TRG_IncTick(); //call trigger
 

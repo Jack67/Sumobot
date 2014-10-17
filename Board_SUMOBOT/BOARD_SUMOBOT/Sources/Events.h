@@ -44,7 +44,7 @@
 #include "TU1.h"
 #include "SW1.h"
 #include "BitIoLdd2.h"
-#include "Buzzer.h"
+#include "BUZ1.h"
 #include "BitIoLdd3.h"
 
 #ifdef __cplusplus

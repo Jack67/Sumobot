@@ -32,6 +32,8 @@
 	#define PL_HAS_LED_RED	0
 	#define PL_HAS_LED_BLUE	0
 	#define PL_HAS_LED_GREEN	1
+
+	#define PL_HAS_BUZZER 1
 #endif
 
 

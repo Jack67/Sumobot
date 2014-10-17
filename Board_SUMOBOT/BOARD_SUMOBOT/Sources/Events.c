@@ -36,6 +36,7 @@ extern "C" {
 
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include "../../../Board_FRDM/Common/Timer.h"
 
 /*
 ** ===================================================================
@@ -72,6 +73,7 @@ void Cpu_OnNMIINT(void)
 void TI1_OnInterrupt(void)
 {
   /* Write your code here ... */
+	TMR_OnInterrupt();
 }
 
 /* END Events */
