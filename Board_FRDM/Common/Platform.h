@@ -22,7 +22,10 @@
 	#define PL_HAS_LED_BLUE	1
 	#define PL_HAS_LED_GREEN	1
 
-#else ifdef PL_BOARD_IS_ROBOT
+	#define PL_HAS_DEBOUNCE 1
+#endif
+
+#ifdef PL_BOARD_IS_ROBOT
 	#define PL_HAS_EVENTS 	1
 	#define PL_HAS_TIMER 	1
 	#define PL_HAS_KEYS 	1
@@ -34,6 +37,8 @@
 	#define PL_HAS_LED_GREEN	1
 
 	#define PL_HAS_BUZZER 1
+
+	#define PL_HAS_DEBOUNCE 1
 #endif
 
 

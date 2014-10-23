@@ -14,6 +14,16 @@
   #include "Event.h"
 #endif
 
+#include "KeyDebounce.h"
+
+
+void KEY_Scan(void)
+{
+	KEYDBNC_Process();
+}
+
+
+/*
 void KEY_Scan(void) {
 #if PL_NOF_KEYS >= 1
 	if (KEY1_Get())
@@ -64,8 +74,8 @@ void KEY_Scan(void) {
 	}
 #endif
 
-  /*! \todo Implement handling of all the other keys */
-}
+
+}*/
 
 #if PL_HAS_KBI
 void KEY_OnInterrupt(KEY_Buttons button) {

@@ -26,17 +26,17 @@ static void BUZ_Toggle(void *dataPtr) {
   } else {
     trgInfo->buzIterationCntr--;
     BUZ1_NegVal();
-    (void)TRG_SetTrigger(TRG_BUZ_BEEP, trgInfo->buzPeriodTicks, BUZ_Toggle, trgInfo);
+    (void)TRG_SetTrigger(TRG_BUZ_BEEP, trgInfo->buzPeriodTicks, &BUZ_Toggle, trgInfo);
   }
 }
 
 
-uint8_t BUZ_Beep(uint16_t freq, uint16_t durationMs) {/*freq max 1kHz*/
+uint8_t BUZ_Beep(uint16_t freq, uint16_t durationMs) {/*freq max 500Hz*/
   if (trgInfo.buzIterationCntr==0) { /* only if buzzer is not running right now */
     BUZ1_SetVal(); /* turn buzzer on */
-    trgInfo.buzPeriodTicks = (1000*TRG_TICKS_MS)/freq;
+    trgInfo.buzPeriodTicks = (500*TRG_TICKS_MS)/freq; //500 because 1000/2
     trgInfo.buzIterationCntr = durationMs/TRG_TICKS_MS/trgInfo.buzPeriodTicks;
-    return TRG_SetTrigger(TRG_BUZ_BEEP, trgInfo.buzPeriodTicks, BUZ_Toggle, (void*)&trgInfo);
+    return TRG_SetTrigger(TRG_BUZ_BEEP, trgInfo.buzPeriodTicks, &BUZ_Toggle, (void*)&trgInfo);
   } else {
     return ERR_BUSY;
   }
