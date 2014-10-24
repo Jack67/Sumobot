@@ -97,7 +97,7 @@ int main(void)
   CLS1_Init();
   TRG_Init();
 
-  TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
+  //TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
 
 
   for(;;){
@@ -134,13 +134,13 @@ void OnEvent(EVNT_Handle ev)
 	case EVNT_SW3_PRESSED:
 		LED_Green_On();
 		break;
-	case EVNT_SW4_PRESSED:
+	case EVNT_SW1_LPRESSED:
 		LED_Red_Off();
 		break;
-	case EVNT_SW5_PRESSED:
+	case EVNT_SW2_LPRESSED:
 		LED_Blue_Off();
 		break;
-	case EVNT_SW6_PRESSED:
+	case EVNT_SW3_LPRESSED:
 		LED_Green_Off();
 		break;
 	case EVNT_SW7_PRESSED:
