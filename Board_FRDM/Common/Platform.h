@@ -39,6 +39,8 @@
 	#define PL_HAS_BUZZER 1
 
 	#define PL_HAS_DEBOUNCE 1
+
+	#define PL_HAS_RTOS 1
 #endif
 
 
