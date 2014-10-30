@@ -12,19 +12,34 @@
 
 static portTASK_FUNCTION(T1, pvParameters) {
   for(;;) {
-    LED1_Neg();
+    LED_Red_Neg();
+    FRTOS1_vTaskDelay(1000);
   }
 }
 
-void RTOS_Run(void) {
+static portTASK_FUNCTION(T2, pvParameters) {
+  for(;;) {
+    LED_Blue_Neg();
+    FRTOS1_vTaskDelay(500);
+  }
+}
+
+void RTOS_Run(void)
+{
   FRTOS1_vTaskStartScheduler();
 }
 
-void RTOS_Init(void) {
+void RTOS_Init(void)
+{
   /*! \todo Add tasks here */
-  if (FRTOS1_xTaskCreate(T1, (signed portCHAR *)"T1", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS) {
+  if (FRTOS1_xTaskCreate(T1, (signed portCHAR *)"T1", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
+  {
     for(;;){} /* error */
   }
+  if (FRTOS1_xTaskCreate(T2, (signed portCHAR *)"T2", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
+  {
+      for(;;){} /* error */
+   }
 }
 
 void RTOS_Deinit(void) {

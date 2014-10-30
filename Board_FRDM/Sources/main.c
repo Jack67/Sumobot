@@ -60,6 +60,12 @@
 #include "CLS1.h"
 #include "AS1.h"
 #include "ASerialLdd1.h"
+#include "FRTOS1.h"
+#include "USB1.h"
+#include "USB0.h"
+#include "CDC1.h"
+#include "Tx1.h"
+#include "Rx1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -72,6 +78,8 @@
 #include "../Common/LED.h"
 #include "../Common/Timer.h"
 #include "../Common/Trigger.h"
+#include "../Common/RTOS.h"
+#include "../Common/Shell.h"
 
 void OnEvent(EVNT_Handle);
 void OnTriggerBlink(void*);
@@ -95,11 +103,15 @@ int main(void)
   LED_Red_Init();
   TMR_Init();
   CLS1_Init();
+  SHELL_Init();
   TRG_Init();
+  RTOS_Init();
 
+  RTOS_Run();
+  for(;;){}
   //TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
 
-
+/*
   for(;;){
 	  //CLS1_SendStr("I rule the world" , CLS1_GetStdio()->stdOut);
 	  char c;
@@ -111,7 +123,7 @@ int main(void)
 
 	  KEY_Scan();
 	  EVNT_HandleEvent(&OnEvent);
-  }
+  }*/
 }
 
 void OnTriggerBlink(void* v)
