@@ -42,6 +42,8 @@
 #include "BitIoLdd2.h"
 #include "BUZ1.h"
 #include "BitIoLdd3.h"
+#include "FRTOS1.h"
+#include "UTIL1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -55,6 +57,7 @@
 #include "../../../Board_FRDM/Common/Timer.h"
 #include "../../../Board_FRDM/Common/Trigger.h"
 #include "../../../Board_FRDM/Common/Buzzer.h"
+#include "../../../Board_FRDM/Common/RTOS.h"
 
 void OnTriggerBlink(void*);
 
@@ -81,9 +84,12 @@ int main(void)
   TRG_Init();
   BUZ_Init();
 
-  BUZ_Beep(1000,1000);
+  RTOS_Init();
+  RTOS_Run();
 
-  TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
+  //BUZ_Beep(1000,1000);
+
+  //TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
 
   for(;;){
 	  //LED_Green_On();
@@ -98,7 +104,6 @@ void OnTriggerBlink(void* v)
 {
 	LED_Green_Neg();
 	TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
-
 }
 
 void blabla(void){
