@@ -19,7 +19,7 @@ static portTASK_FUNCTION(T1, pvParameters) {
 
 static portTASK_FUNCTION(T2, pvParameters) {
   for(;;) {
-    LED_Blue_Neg();
+    LED_Green_Neg();
     FRTOS1_vTaskDelay(500);
   }
 }

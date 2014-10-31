@@ -59,6 +59,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\LED.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Platform.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\RTOS.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Shell.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Timer.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Trigger.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\AS1.c</PathName>
@@ -73,6 +74,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\BitIoLdd7.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\BitIoLdd8.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\BitIoLdd9.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\CDC1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\CLS1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\CS1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\Cpu.c</PathName>
@@ -82,6 +84,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\LED_Green.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\LED_Red.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\PE_LDD.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\Rx1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\SW1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\SW2.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\SW3.c</PathName>
@@ -92,6 +95,9 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\TI1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\TU1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\TimerIntLdd1.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\Tx1.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\USB0.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\USB1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\UTIL1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\Vectors.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\WAIT.c</PathName>
@@ -106,6 +112,14 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\queue.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\tasks.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\timers.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_cdc.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_cdc_pstn.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_class.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_dci_kinetis.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_descriptor.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_driver.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_framework.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\wdt_kinetis.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Project_Settings\Startup_Code\startup.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Sources\Events.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Sources\main.c</PathName>
@@ -119,6 +133,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\LED.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Platform.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\RTOS.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Shell.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Timer.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Trigger.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\AS1.h</PathName>
@@ -133,10 +148,12 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\BitIoLdd7.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\BitIoLdd8.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\BitIoLdd9.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\CDC1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\CLS1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\CS1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\Cpu.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\FRTOS1.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\FSL_USB_Stack_Config.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\FreeRTOS.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\FreeRTOSConfig.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\HF1.h</PathName>
@@ -148,6 +165,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\PE_Error.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\PE_LDD.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\PE_Types.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\Rx1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\SW1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\SW2.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\SW3.h</PathName>
@@ -159,10 +177,16 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\TI1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\TU1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\TimerIntLdd1.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\Tx1.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\USB0.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\USB1.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\USB_Config.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\UTIL1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\WAIT.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\croutine.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\derivative.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\event_groups.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\hidef.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\list.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\mpu_wrappers.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\portTicks.h</PathName>
@@ -173,6 +197,18 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\semphr.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\task.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\timers.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\types.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_bdt_kinetis.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_cdc.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_cdc_pstn.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_class.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_dci_kinetis.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_dciapi.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_descriptor.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_devapi.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_framework.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_user_config.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\wdt_kinetis.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Sources\Events.h</PathName>
       <PathName>C:\Freescale\KDS_1.1.1\eclipse\ProcessorExpert\lib\Kinetis\iofiles\MKL25Z4.h</PathName>
       <PathName>C:\Freescale\KDS_1.1.1\eclipse\ProcessorExpert\lib\Kinetis\pdd\inc\ADC_PDD.h</PathName>
