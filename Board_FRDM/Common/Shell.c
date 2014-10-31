@@ -23,7 +23,12 @@ static uint32_t SHELL_val; /* used as demo value for shell */
 
 void SHELL_SendString(unsigned char *msg) {
   /*! \todo Replace this with message queues */
-  CLS1_SendStr(msg, CLS1_GetStdio()->stdOut);
+#if PL_HAS_SHELL_QUEUE
+	SQUEUE_SendString(msg);
+#else
+  //CLS1_SendStr(msg, CLS1_GetStdio()->stdOut);
+#endif
+
 }
 
 /*!

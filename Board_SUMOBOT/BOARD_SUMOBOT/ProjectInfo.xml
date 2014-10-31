@@ -60,8 +60,11 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Platform.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\RTOS.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Shell.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\ShellQueue.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Timer.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Trigger.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\ASerialLdd1.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BT1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BUZ1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BitIoLdd1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BitIoLdd2.c</PathName>
@@ -78,6 +81,7 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\PE_LDD.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\Rx1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\SW1.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\Serial1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TI1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TU1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TimerIntLdd1.c</PathName>
@@ -120,8 +124,11 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Platform.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\RTOS.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Shell.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\ShellQueue.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Timer.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Trigger.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\ASerialLdd1.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BT1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BUZ1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BitIoLdd1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BitIoLdd2.h</PathName>
@@ -145,6 +152,7 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\PE_Types.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\Rx1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\SW1.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\Serial1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\StackMacros.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TI1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TU1.h</PathName>
