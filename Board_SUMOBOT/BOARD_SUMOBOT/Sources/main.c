@@ -66,6 +66,7 @@
 #include "../../../Board_FRDM/Common/Trigger.h"
 #include "../../../Board_FRDM/Common/Buzzer.h"
 #include "../../../Board_FRDM/Common/RTOS.h"
+#include "../../../Board_FRDM/Common/Shell.h"
 
 void OnTriggerBlink(void*);
 
@@ -92,8 +93,10 @@ int main(void)
   TRG_Init();
   BUZ_Init();
 
+  SHELL_Init();
   RTOS_Init();
   RTOS_Run();
+
 
   //BUZ_Beep(1000,1000);
 
