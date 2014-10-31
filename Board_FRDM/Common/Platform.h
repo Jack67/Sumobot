@@ -39,7 +39,7 @@
 	#define PL_NOF_KEYS 	1
 	#define PL_HAS_TRIGGER 	1
 
-	#define PL_HAS_LED_RED	0
+	#define PL_HAS_LED_RED	1
 	#define PL_HAS_LED_BLUE	0
 	#define PL_HAS_LED_GREEN	1
 
@@ -52,7 +52,6 @@
 	#define PL_HAS_SHELL 1
 	#define PL_HAS_BLUETOOTH 0
 	#define PL_HAS_USB_CDC 1
-	#define CLS1_DEFAULT_SERIAL 0
 #endif
 
 
