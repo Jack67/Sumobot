@@ -80,6 +80,7 @@
 #include "../Common/Trigger.h"
 #include "../Common/RTOS.h"
 #include "../Common/Shell.h"
+#include "../Common/ShellQueue.h"
 
 void OnEvent(EVNT_Handle);
 void OnTriggerBlink(void*);
@@ -103,6 +104,7 @@ int main(void)
   LED_Red_Init();
   TMR_Init();
   CLS1_Init();
+  SQUEUE_Init();
   SHELL_Init();
   TRG_Init();
   RTOS_Init();

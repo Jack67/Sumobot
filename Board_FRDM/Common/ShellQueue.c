@@ -13,7 +13,7 @@
 
 static xQueueHandle SQUEUE_Queue;
 
-#define SQUEUE_LENGTH      32 /* items in queue, that's my buffer size */
+#define SQUEUE_LENGTH      128 /* items in queue, that's my buffer size */
 #define SQUEUE_ITEM_SIZE   1  /* each item is a single character */
 
 void SQUEUE_SendString(const unsigned char *str) {
@@ -28,9 +28,18 @@ void SQUEUE_SendString(const unsigned char *str) {
 
 unsigned char SQUEUE_ReceiveChar(void) {
   /*! \todo Implement function */
-	unsigned char buffer;
-	FRTOS1_xQueueReceive(SQUEUE_Queue, &buffer, portMAX_DELAY);
-	return buffer;
+	  unsigned char ch;
+	  portBASE_TYPE res;
+
+	  res = FRTOS1_xQueueReceive(SQUEUE_Queue, &ch, 0);
+	  if (res==errQUEUE_EMPTY)
+	  {
+	    return '\0';
+	  }
+	  else
+	  {
+	    return ch;
+	  }
 }
 
 unsigned short SQUEUE_NofElements(void) {
@@ -43,9 +52,13 @@ void SQUEUE_Deinit(void) {
 
 void SQUEUE_Init(void) {
   SQUEUE_Queue = FRTOS1_xQueueCreate(SQUEUE_LENGTH, SQUEUE_ITEM_SIZE);
-  if (SQUEUE_Queue==NULL) {
-	  FRTOS1_vQueueAddToRegistry(SQUEUE_Queue, "SerielQueue");
+  if (SQUEUE_Queue==NULL)
+  {
     for(;;){} /* out of memory? */
   }
+  FRTOS1_vQueueAddToRegistry(SQUEUE_Queue, "ShellQueue");
+#if PL_HAS_RTOS_TRACE
+  RTOSTRC1_vTraceSetQueueName(SQUEUE_Queue, "ShellQueue");
+#endif
 }
 #endif /* PL_HAS_SHELL_QUEUE */

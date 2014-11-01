@@ -60,6 +60,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Platform.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\RTOS.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Shell.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\ShellQueue.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Timer.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Trigger.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\AS1.c</PathName>
@@ -134,6 +135,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Platform.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\RTOS.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Shell.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\ShellQueue.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Timer.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Trigger.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\AS1.h</PathName>
