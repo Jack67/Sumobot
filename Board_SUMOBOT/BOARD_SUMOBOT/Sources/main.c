@@ -91,14 +91,14 @@ int main(void)
   KEY_Init();
   //LED_Blue_Init();
   LED_Green_Init();
-  //LED_Red_Init();
+  LED_Red_Init();
   TMR_Init();
-  //CLS1_Init();
+  CLS1_Init();
   TRG_Init();
   BUZ_Init();
 
-  SHELL_Init();
   SQUEUE_Init();
+  SHELL_Init();
   RTOS_Init();
   RTOS_Run();
 
