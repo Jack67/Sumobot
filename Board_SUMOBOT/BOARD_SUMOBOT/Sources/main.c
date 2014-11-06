@@ -99,6 +99,7 @@ int main(void)
 
   SQUEUE_Init();
   SHELL_Init();
+  SEM_Init();
   RTOS_Init();
   RTOS_Run();
 

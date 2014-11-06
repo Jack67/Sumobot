@@ -2,9 +2,9 @@
 <PEproject>
   <Header>
     <Name>BOARD_SUMOBOT</Name>
-    <SavedBy>Elia</SavedBy>
-    <ModificationStamp>22</ModificationStamp>
-    <Date>2014-11-01</Date>
+    <SavedBy>Michael Müller</SavedBy>
+    <ModificationStamp>24</ModificationStamp>
+    <Date>2014-11-06</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.10.0.RT6_b1428-0121</PEversion>
   </Header>
@@ -22734,7 +22734,7 @@
               <ItemSymbol>Ser</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>UART0</Value>
+              <Value>UART1</Value>
               <SharedPrphMode>false</SharedPrphMode>
             </ItemState>
             <ItemState>
@@ -22756,7 +22756,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>InpInt</ItemSymbol>
-              <Value>INT_UART0_RX_TX</Value>
+              <Value>INT_UART1_RX_TX</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>InitPriority</ItemSymbol>
@@ -22780,7 +22780,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>OutInt</ItemSymbol>
-              <Value>INT_UART0_RX_TX</Value>
+              <Value>INT_UART1_RX_TX</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>IntTxDPriority</ItemSymbol>
@@ -22809,7 +22809,7 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>ErrInt</ItemSymbol>
-              <Value>INT_UART0_ERR</Value>
+              <Value>INT_UART1_ERR</Value>
             </ItemState>
             <ItemState>
               <ItemSymbol>IntErrorPriority</ItemSymbol>
@@ -23101,7 +23101,7 @@
               <ItemSymbol>Inp</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>PTA1/UART0_RX/FTM0_CH6/JTAG_TDI/EZP_DI</Value>
+              <Value>ADC1_SE5a/PTE1/LLWU_P0/SPI1_SOUT/UART1_RX/SDHC0_D0/TRACE_D3/I2C1_SCL/SPI1_SIN</Value>
               <SharedPrphMode>false</SharedPrphMode>
             </ItemState>
             <ItemState>
@@ -23143,7 +23143,7 @@
               <ItemSymbol>Out</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
-              <Value>PTA2/UART0_TX/FTM0_CH7/JTAG_TDO/TRACE_SWO/EZP_DO</Value>
+              <Value>ADC1_SE4a/PTE0/SPI1_PCS1/UART1_TX/SDHC0_D1/TRACE_CLKOUT/I2C1_SDA/RTC_CLKOUT</Value>
               <SharedPrphMode>false</SharedPrphMode>
             </ItemState>
             <ItemState>
@@ -23581,7 +23581,7 @@
                     <ItemSymbol>Device</ItemSymbol>
                     <ReadOnly>false</ReadOnly>
                     <UserReadOnly>false</UserReadOnly>
-                    <Value>UART0</Value>
+                    <Value>UART1</Value>
                     <SharedPrphMode>false</SharedPrphMode>
                   </ItemState>
                   <ItemState>
@@ -23602,7 +23602,7 @@
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>InpInt</ItemSymbol>
-                    <Value>INT_UART0_RX_TX</Value>
+                    <Value>INT_UART1_RX_TX</Value>
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>InitPriority</ItemSymbol>
@@ -23637,7 +23637,7 @@
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>OutInt</ItemSymbol>
-                    <Value>INT_UART0_RX_TX</Value>
+                    <Value>INT_UART1_RX_TX</Value>
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>IntTxDPriority</ItemSymbol>
@@ -23672,7 +23672,7 @@
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>ErrInt</ItemSymbol>
-                    <Value>INT_UART0_ERR</Value>
+                    <Value>INT_UART1_ERR</Value>
                   </ItemState>
                   <ItemState>
                     <ItemSymbol>IntErrorPriority</ItemSymbol>
@@ -23903,7 +23903,7 @@
                     <ItemSymbol>Inp</ItemSymbol>
                     <ReadOnly>false</ReadOnly>
                     <UserReadOnly>false</UserReadOnly>
-                    <Value>PTA1/UART0_RX/FTM0_CH6/JTAG_TDI/EZP_DI</Value>
+                    <Value>ADC1_SE5a/PTE1/LLWU_P0/SPI1_SOUT/UART1_RX/SDHC0_D0/TRACE_D3/I2C1_SCL/SPI1_SIN</Value>
                     <SharedPrphMode>false</SharedPrphMode>
                   </ItemState>
                   <ItemState>
@@ -23924,7 +23924,7 @@
                     <ItemSymbol>Out</ItemSymbol>
                     <ReadOnly>false</ReadOnly>
                     <UserReadOnly>false</UserReadOnly>
-                    <Value>PTA2/UART0_TX/FTM0_CH7/JTAG_TDO/TRACE_SWO/EZP_DO</Value>
+                    <Value>ADC1_SE4a/PTE0/SPI1_PCS1/UART1_TX/SDHC0_D1/TRACE_CLKOUT/I2C1_SDA/RTC_CLKOUT</Value>
                     <SharedPrphMode>false</SharedPrphMode>
                   </ItemState>
                   <ItemState>
