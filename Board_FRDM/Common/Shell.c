@@ -18,12 +18,20 @@
 #if PL_HAS_BLUETOOTH
   #include "BT1.h"
 #endif
+#if PL_HAS_SHELL_QUEUE
+	#include"ShellQueue.h"
+#endif
 
 static uint32_t SHELL_val; /* used as demo value for shell */
 
 void SHELL_SendString(unsigned char *msg) {
   /*! \todo Replace this with message queues */
-  CLS1_SendStr(msg, CLS1_GetStdio()->stdOut);
+#if PL_HAS_SHELL_QUEUE
+	SQUEUE_SendString(msg);
+#else
+	CLS1_SendStr(msg, CLS1_GetStdio()->stdOut);
+#endif
+
 }
 
 /*!
@@ -145,17 +153,36 @@ static portTASK_FUNCTION(ShellTask, pvParameters) {
 #if CLS1_DEFAULT_SERIAL
   (void)CLS1_ParseWithCommandTable((unsigned char*)CLS1_CMD_HELP, ioLocal, CmdParserTable);
 #endif
-  for(;;) {
+  for(;;)
+  {
 #if CLS1_DEFAULT_SERIAL
-    (void)CLS1_ReadAndParseWithCommandTable(localConsole_buf, sizeof(localConsole_buf), ioLocal, CmdParserTable);
+	  (void)CLS1_ReadAndParseWithCommandTable(localConsole_buf, sizeof(localConsole_buf), ioLocal, CmdParserTable);
 #endif
 #if PL_HAS_USB_CDC
-    (void)CLS1_ReadAndParseWithCommandTable(cdc_buf, sizeof(cdc_buf), &CDC_stdio, CmdParserTable);
+	  (void)CLS1_ReadAndParseWithCommandTable(cdc_buf, sizeof(cdc_buf), &CDC_stdio, CmdParserTable);
 #endif
 #if PL_HAS_BLUETOOTH
-    (void)CLS1_ReadAndParseWithCommandTable(bluetooth_buf, sizeof(bluetooth_buf), &BT_stdio, CmdParserTable);
+	  (void)CLS1_ReadAndParseWithCommandTable(bluetooth_buf, sizeof(bluetooth_buf), &BT_stdio, CmdParserTable);
 #endif
-    FRTOS1_vTaskDelay(50/portTICK_RATE_MS);
+
+#if PL_HAS_SHELL_QUEUE
+/*! \todo Handle shell queue */
+	  unsigned char ch;
+
+      while((ch=SQUEUE_ReceiveChar()) && ch!='\0')
+      {
+#if CLS1_DEFAULT_SERIAL
+    	  ioLocal->stdOut(ch);
+#endif
+#if PL_HAS_USB_CDC
+    	  CDC_stdio.stdOut(ch);
+#endif
+#if PL_HAS_BLUETOOTH
+    	  BT_stdio.stdOut(ch); /* copy on Bluetooth */
+#endif
+      }
+#endif
+	  FRTOS1_vTaskDelay(50/portTICK_RATE_MS);
   } /* for */
 }
 

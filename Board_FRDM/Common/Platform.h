@@ -30,6 +30,8 @@
 	#define PL_HAS_BLUETOOTH 0
 	#define PL_HAS_USB_CDC 1
 	#define CLS1_DEFAULT_SERIAL 1
+
+	#define PL_HAS_SHELL_QUEUE 1
 #endif
 
 #ifdef PL_BOARD_IS_ROBOT
@@ -50,8 +52,10 @@
 	#define PL_HAS_RTOS 1
 
 	#define PL_HAS_SHELL 1
-	#define PL_HAS_BLUETOOTH 0
+	#define PL_HAS_BLUETOOTH 1
 	#define PL_HAS_USB_CDC 1
+
+	#define PL_HAS_SHELL_QUEUE 1
 #endif
 
 

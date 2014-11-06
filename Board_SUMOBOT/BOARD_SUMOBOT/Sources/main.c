@@ -52,6 +52,9 @@
 #include "CLS1.h"
 #include "LED_Red.h"
 #include "BitIoLdd4.h"
+#include "BT1.h"
+#include "Serial1.h"
+#include "ASerialLdd1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -66,6 +69,8 @@
 #include "../../../Board_FRDM/Common/Trigger.h"
 #include "../../../Board_FRDM/Common/Buzzer.h"
 #include "../../../Board_FRDM/Common/RTOS.h"
+#include "../../../Board_FRDM/Common/Shell.h"
+#include "../../../Board_FRDM/Common/ShellQueue.h"
 
 void OnTriggerBlink(void*);
 
@@ -86,14 +91,17 @@ int main(void)
   KEY_Init();
   //LED_Blue_Init();
   LED_Green_Init();
-  //LED_Red_Init();
+  LED_Red_Init();
   TMR_Init();
-  //CLS1_Init();
+  CLS1_Init();
   TRG_Init();
   BUZ_Init();
 
+  SQUEUE_Init();
+  SHELL_Init();
   RTOS_Init();
   RTOS_Run();
+
 
   //BUZ_Beep(1000,1000);
 

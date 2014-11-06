@@ -9,10 +9,12 @@
 #include "RTOS.h"
 #include "FRTOS1.h"
 #include "LED.h"
+#include "Shell.h"
 
 static portTASK_FUNCTION(T1, pvParameters) {
   for(;;) {
     LED_Red_Neg();
+    SHELL_SendString("1000ms\r\n");
     FRTOS1_vTaskDelay(1000);
   }
 }
@@ -20,6 +22,7 @@ static portTASK_FUNCTION(T1, pvParameters) {
 static portTASK_FUNCTION(T2, pvParameters) {
   for(;;) {
     LED_Green_Neg();
+    SHELL_SendString("500ms\r\n");
     FRTOS1_vTaskDelay(500);
   }
 }
