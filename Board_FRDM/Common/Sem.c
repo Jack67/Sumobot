@@ -52,6 +52,7 @@ void SEM_Init(void)
 	{
 		for(;;); /* creation failed */
 	}
+	FRTOS1_vQueueAddToRegistry(MySemTest, "Sem");
 
   if (FRTOS1_xTaskCreate(vMasterTask, "Master", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY+1, NULL) != pdPASS)
   {

@@ -33,6 +33,8 @@
 
 	#define PL_HAS_SHELL_QUEUE 1
 	#define PL_HAS_SEMAPHORE 1
+
+	#define PL_HAS_LINE_SENSOR 0
 #endif
 
 #ifdef PL_BOARD_IS_ROBOT
@@ -59,6 +61,8 @@
 	#define PL_HAS_SHELL_QUEUE 1
 
 	#define PL_HAS_SEMAPHORE 1
+
+	#define PL_HAS_LINE_SENSOR 1
 #endif
 
 
