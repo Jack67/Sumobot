@@ -81,6 +81,7 @@
 #include "../Common/RTOS.h"
 #include "../Common/Shell.h"
 #include "../Common/ShellQueue.h"
+#include "../Common/Sem.h"
 
 void OnEvent(EVNT_Handle);
 void OnTriggerBlink(void*);
@@ -107,6 +108,7 @@ int main(void)
   SQUEUE_Init();
   SHELL_Init();
   TRG_Init();
+  SEM_Init();
   RTOS_Init();
 
   RTOS_Run();

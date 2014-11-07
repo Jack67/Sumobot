@@ -71,6 +71,7 @@
 #include "../../../Board_FRDM/Common/RTOS.h"
 #include "../../../Board_FRDM/Common/Shell.h"
 #include "../../../Board_FRDM/Common/ShellQueue.h"
+#include "../../../Board_FRDM/Common/Reflectance.h"
 
 void OnTriggerBlink(void*);
 
@@ -99,6 +100,8 @@ int main(void)
 
   SQUEUE_Init();
   SHELL_Init();
+  SEM_Init();
+  REF_Init();
   RTOS_Init();
   RTOS_Run();
 
