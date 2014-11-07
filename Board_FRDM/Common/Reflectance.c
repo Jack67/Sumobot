@@ -25,6 +25,7 @@
 #include "Shell.h"
 
 #define REF_NOF_SENSORS 6 /* number of sensors */
+#define IR_TIMEOUT		56250 /* 15ms * 3750/ms */
 
 typedef enum {
   REF_STATE_INIT,
@@ -100,10 +101,11 @@ static const SensorFctType SensorFctArray[REF_NOF_SENSORS] = {
 
 static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
   uint8_t cnt; /* number of sensor */
+  uint8_t timeout;
   uint8_t i;
 
   LED_IR_On(); /* IR LED's on */
-  WAIT1_Waitus(200); /*! \todo adjust time as needed */
+  WAIT1_Waitus(500); /*! \todo adjust time as needed */
 
   for(i=0;i<REF_NOF_SENSORS;i++) {
     SensorFctArray[i].SetOutput(); /* turn I/O line as output */
@@ -125,6 +127,11 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
         }
       } else { /* have value */
         cnt++;
+      }
+      if(RefCnt_GetCounterValue(timerHandle) > IR_TIMEOUT)
+      {
+    	  cnt = REF_NOF_SENSORS;
+    	  SHELL_SendString("IR Timeout!!");
       }
     }
   } while(cnt!=REF_NOF_SENSORS);

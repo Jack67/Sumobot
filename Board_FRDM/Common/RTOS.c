@@ -10,12 +10,18 @@
 #include "FRTOS1.h"
 #include "LED.h"
 #include "Shell.h"
+#include "Reflectance.h"
+#include "Event.h"
+#include "Keys.h"
 
 static portTASK_FUNCTION(T1, pvParameters) {
   for(;;) {
-    LED_Red_Neg();
-    SHELL_SendString("1000ms\r\n");
-    FRTOS1_vTaskDelay(1000);
+	  KEY_Scan();
+	  if (EVNT_EventIsSet(EVNT_SW1_PRESSED)) {
+	     EVNT_ClearEvent(EVNT_SW1_PRESSED);
+	     EVNT_SetEvent(EVNT_REF_START_STOP_CALIBRATION);
+	  }
+	  FRTOS1_vTaskDelay(200);
   }
 }
 
@@ -35,14 +41,16 @@ void RTOS_Run(void)
 void RTOS_Init(void)
 {
   /*! \todo Add tasks here */
- /* if (FRTOS1_xTaskCreate(T1, (signed portCHAR *)"T1", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
+ if (FRTOS1_xTaskCreate(T1, (signed portCHAR *)"T1", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
   {
     for(;;){} /* error */
-  /*}
+  }
+ /*
   if (FRTOS1_xTaskCreate(T2, (signed portCHAR *)"T2", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
   {
       for(;;){} /* error */
-   //}
+ //  }
+
 }
 
 void RTOS_Deinit(void) {

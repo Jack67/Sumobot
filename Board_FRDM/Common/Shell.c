@@ -21,6 +21,9 @@
 #if PL_HAS_SHELL_QUEUE
 	#include"ShellQueue.h"
 #endif
+#if PL_HAS_LINE_SENSOR
+	#include"Reflectance.h"
+#endif
 
 static uint32_t SHELL_val; /* used as demo value for shell */
 
@@ -92,6 +95,9 @@ static const CLS1_ParseCommandCallback CmdParserTable[] =
 #if BT1_PARSE_COMMAND_ENABLED
   BT1_ParseCommand,
 #endif
+#endif
+#if PL_HAS_LINE_SENSOR
+  REF_ParseCommand,
 #endif
   NULL /* Sentinel */
 };

@@ -55,6 +55,22 @@
 #include "BT1.h"
 #include "Serial1.h"
 #include "ASerialLdd1.h"
+#include "LED_IR.h"
+#include "LEDpin1.h"
+#include "BitIoLdd5.h"
+#include "RefCnt.h"
+#include "IR1.h"
+#include "BitIoLdd6.h"
+#include "IR2.h"
+#include "BitIoLdd7.h"
+#include "IR3.h"
+#include "BitIoLdd8.h"
+#include "IR4.h"
+#include "BitIoLdd9.h"
+#include "IR5.h"
+#include "BitIoLdd10.h"
+#include "IR6.h"
+#include "BitIoLdd11.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -105,25 +121,15 @@ int main(void)
   RTOS_Init();
   RTOS_Run();
 
-
   //BUZ_Beep(1000,1000);
 
   //TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
 
   for(;;){
-	  //LED_Green_On();
-	  //WAIT1_Waitms(500);
-	  //LED_Green_Off();
-	  //WAIT1_Waitms(500);
   }
 
 }
 
-void OnTriggerBlink(void* v)
-{
-	LED_Green_Neg();
-	TRG_SetTrigger(TRG_LED_BLINK,100,&OnTriggerBlink,0);
-}
 
 void blabla(void){
 
