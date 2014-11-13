@@ -36,7 +36,7 @@
 
 	#define PL_HAS_LINE_SENSOR 0
 
-	PL_HAS_MOTOR 0
+	#define PL_HAS_MOTOR 0
 #endif
 
 #ifdef PL_BOARD_IS_ROBOT

@@ -25,7 +25,7 @@
 #include "Shell.h"
 
 #define REF_NOF_SENSORS 6 /* number of sensors */
-#define IR_TIMEOUT		7813 /* 15ms * 3750/ms */
+#define IR_TIMEOUT		46875 /* 100ms */
 
 typedef enum {
   REF_STATE_INIT,
@@ -103,6 +103,7 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
   uint8_t cnt; /* number of sensor */
   uint8_t timeout;
   uint8_t i;
+  char	str[] = "IR:  ";
 
   LED_IR_On(); /* IR LED's on */
   WAIT1_Waitus(500); /*! \todo adjust time as needed */
@@ -120,18 +121,28 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
   do {
     /*! \todo Be aware that this might block for a long time, if discharging takes long. Consider using a timeout. */
     cnt = 0;
-    for(i=0;i<REF_NOF_SENSORS;i++) {
-      if (raw[i]==MAX_SENSOR_VALUE) { /* not measured yet? */
-        if (SensorFctArray[i].GetVal()==0) {
+    for(i=0;i<REF_NOF_SENSORS;i++)
+    {
+      if (raw[i]==MAX_SENSOR_VALUE)
+      {
+        if (SensorFctArray[i].GetVal()==0)
+        {
           raw[i] = RefCnt_GetCounterValue(timerHandle);
         }
-      } else { /* have value */
+      }
+      else
+      {
         cnt++;
       }
       if(RefCnt_GetCounterValue(timerHandle) > IR_TIMEOUT)
       {
+    	  i = REF_NOF_SENSORS;
     	  cnt = REF_NOF_SENSORS;
-    	  SHELL_SendString("IR Timeout!!");
+    	  /*
+    	  str[3] = i + 48;
+    	  SHELL_SendString(str);
+    	  WAIT1_Waitms(1000);
+    	  */
       }
     }
   } while(cnt!=REF_NOF_SENSORS);

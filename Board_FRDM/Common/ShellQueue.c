@@ -13,7 +13,7 @@
 
 static xQueueHandle SQUEUE_Queue;
 
-#define SQUEUE_LENGTH      128 /* items in queue, that's my buffer size */
+#define SQUEUE_LENGTH      512 /* items in queue, that's my buffer size */
 #define SQUEUE_ITEM_SIZE   1  /* each item is a single character */
 
 void SQUEUE_SendString(const unsigned char *str) {
