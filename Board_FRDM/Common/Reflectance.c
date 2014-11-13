@@ -25,7 +25,7 @@
 #include "Shell.h"
 
 #define REF_NOF_SENSORS 6 /* number of sensors */
-#define IR_TIMEOUT		56250 /* 15ms * 3750/ms */
+#define IR_TIMEOUT		7813 /* 15ms * 3750/ms */
 
 typedef enum {
   REF_STATE_INIT,
