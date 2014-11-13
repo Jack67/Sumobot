@@ -89,6 +89,7 @@
 #include "../../../Board_FRDM/Common/ShellQueue.h"
 #include "../../../Board_FRDM/Common/Reflectance.h"
 #include "../../../Board_FRDM/Common/Sem.h"
+#include "../../../Board_FRDM/Common/Motor.h"
 
 void OnTriggerBlink(void*);
 
@@ -119,6 +120,9 @@ int main(void)
   SHELL_Init();
   SEM_Init();
   REF_Init();
+
+  MOT_Init();
+
   RTOS_Init();
   RTOS_Run();
 
