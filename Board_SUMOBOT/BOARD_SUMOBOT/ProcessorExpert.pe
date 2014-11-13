@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>117</ProjectCompNumb>
+    <ProjectCompNumb>150</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -51,7 +51,7 @@
   <UserFolder>
     <UserFolderName />
     <NodeName>Motor</NodeName>
-    <CompNumb>84</CompNumb>
+    <CompNumb>117</CompNumb>
     <FolderType>Beans</FolderType>
     <ExpandedAll>true</ExpandedAll>
   </UserFolder>
@@ -11579,25 +11579,25 @@
       <Value21>true</Value21>
       <ItemId22>75</ItemId22>
       <Value22>true</Value22>
-      <ItemId23>85</ItemId23>
+      <ItemId23>118</ItemId23>
       <Value23>true</Value23>
-      <ItemId24>86</ItemId24>
+      <ItemId24>119</ItemId24>
       <Value24>true</Value24>
-      <ItemId25>88</ItemId25>
+      <ItemId25>121</ItemId25>
       <Value25>true</Value25>
-      <ItemId26>90</ItemId26>
+      <ItemId26>123</ItemId26>
       <Value26>true</Value26>
-      <ItemId27>92</ItemId27>
+      <ItemId27>125</ItemId27>
       <Value27>true</Value27>
-      <ItemId28>94</ItemId28>
+      <ItemId28>127</ItemId28>
       <Value28>true</Value28>
-      <ItemId29>95</ItemId29>
+      <ItemId29>128</ItemId29>
       <Value29>true</Value29>
-      <ItemId30>97</ItemId30>
+      <ItemId30>130</ItemId30>
       <Value30>true</Value30>
-      <ItemId31>99</ItemId31>
+      <ItemId31>132</ItemId31>
       <Value31>true</Value31>
-      <ItemId32>108</ItemId32>
+      <ItemId32>141</ItemId32>
       <Value32>true</Value32>
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
@@ -11720,25 +11720,25 @@
       <Value21>true</Value21>
       <ItemId22>75</ItemId22>
       <Value22>true</Value22>
-      <ItemId23>85</ItemId23>
+      <ItemId23>118</ItemId23>
       <Value23>true</Value23>
-      <ItemId24>86</ItemId24>
+      <ItemId24>119</ItemId24>
       <Value24>true</Value24>
-      <ItemId25>88</ItemId25>
+      <ItemId25>121</ItemId25>
       <Value25>true</Value25>
-      <ItemId26>90</ItemId26>
+      <ItemId26>123</ItemId26>
       <Value26>true</Value26>
-      <ItemId27>92</ItemId27>
+      <ItemId27>125</ItemId27>
       <Value27>true</Value27>
-      <ItemId28>94</ItemId28>
+      <ItemId28>127</ItemId28>
       <Value28>true</Value28>
-      <ItemId29>95</ItemId29>
+      <ItemId29>128</ItemId29>
       <Value29>true</Value29>
-      <ItemId30>97</ItemId30>
+      <ItemId30>130</ItemId30>
       <Value30>true</Value30>
-      <ItemId31>99</ItemId31>
+      <ItemId31>132</ItemId31>
       <Value31>true</Value31>
-      <ItemId32>108</ItemId32>
+      <ItemId32>141</ItemId32>
       <Value32>true</Value32>
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
@@ -31490,7 +31490,7 @@
   <Bean>
     <BeanType>TimerUnit_LDD</BeanType>
     <Name>MOTTU</Name>
-    <CompNumb>85</CompNumb>
+    <CompNumb>118</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>CLOCKS_LDD</IconName>
@@ -33063,7 +33063,7 @@
   <Bean>
     <BeanType>BitIO</BeanType>
     <Name>DIRL</Name>
-    <CompNumb>86</CompNumb>
+    <CompNumb>119</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>BITIO</IconName>
@@ -33106,7 +33106,7 @@
         <InheritedComponentState>
           <BeanType>BitIO_LDD</BeanType>
           <Name>BitIoLdd12</Name>
-          <CompNumb>87</CompNumb>
+          <CompNumb>120</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>PORT_LDD</IconName>
@@ -33645,7 +33645,7 @@
   <Bean>
     <BeanType>PWM</BeanType>
     <Name>PWMR</Name>
-    <CompNumb>88</CompNumb>
+    <CompNumb>121</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>SIGNAL</IconName>
@@ -34081,7 +34081,7 @@
         <InheritedComponentState>
           <BeanType>PWM_LDD</BeanType>
           <Name>PwmLdd1</Name>
-          <CompNumb>89</CompNumb>
+          <CompNumb>122</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>SIGNAL_LDD</IconName>
@@ -35029,7 +35029,7 @@
   <Bean>
     <BeanType>BitIO</BeanType>
     <Name>DIRR</Name>
-    <CompNumb>90</CompNumb>
+    <CompNumb>123</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>BITIO</IconName>
@@ -35072,7 +35072,7 @@
         <InheritedComponentState>
           <BeanType>BitIO_LDD</BeanType>
           <Name>BitIoLdd13</Name>
-          <CompNumb>91</CompNumb>
+          <CompNumb>124</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>PORT_LDD</IconName>
@@ -35611,7 +35611,7 @@
   <Bean>
     <BeanType>PWM</BeanType>
     <Name>PWML</Name>
-    <CompNumb>92</CompNumb>
+    <CompNumb>125</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>SIGNAL</IconName>
@@ -36047,7 +36047,7 @@
         <InheritedComponentState>
           <BeanType>PWM_LDD</BeanType>
           <Name>PwmLdd2</Name>
-          <CompNumb>93</CompNumb>
+          <CompNumb>126</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>SIGNAL_LDD</IconName>
@@ -36995,7 +36995,7 @@
   <Bean>
     <BeanType>TimerUnit_LDD</BeanType>
     <Name>TU_MPC4728</Name>
-    <CompNumb>94</CompNumb>
+    <CompNumb>127</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>CLOCKS_LDD</IconName>
@@ -37921,7 +37921,7 @@
   <Bean>
     <BeanType>BitIO</BeanType>
     <Name>MPC4728_LDAC</Name>
-    <CompNumb>95</CompNumb>
+    <CompNumb>128</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>BITIO</IconName>
@@ -37964,7 +37964,7 @@
         <InheritedComponentState>
           <BeanType>BitIO_LDD</BeanType>
           <Name>BitIoLdd14</Name>
-          <CompNumb>96</CompNumb>
+          <CompNumb>129</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>PORT_LDD</IconName>
@@ -38508,7 +38508,7 @@
   <Bean>
     <BeanType>BitIO</BeanType>
     <Name>MPC4728_RDY</Name>
-    <CompNumb>97</CompNumb>
+    <CompNumb>130</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>BITIO</IconName>
@@ -38551,7 +38551,7 @@
         <InheritedComponentState>
           <BeanType>BitIO_LDD</BeanType>
           <Name>BitIoLdd15</Name>
-          <CompNumb>98</CompNumb>
+          <CompNumb>131</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>PORT_LDD</IconName>
@@ -39095,7 +39095,7 @@
   <Bean>
     <BeanType>QuadCounter</BeanType>
     <Name>Q4CLeft</Name>
-    <CompNumb>99</CompNumb>
+    <CompNumb>132</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>QuadEncoder</IconName>
@@ -39158,7 +39158,7 @@
         <InheritedComponentState>
           <BeanType>BitIO</BeanType>
           <Name>C11</Name>
-          <CompNumb>100</CompNumb>
+          <CompNumb>133</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -39201,7 +39201,7 @@
               <InheritedComponentState>
                 <BeanType>BitIO_LDD</BeanType>
                 <Name>BitIoLdd16</Name>
-                <CompNumb>102</CompNumb>
+                <CompNumb>135</CompNumb>
                 <CompEnabled>true</CompEnabled>
                 <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
                 <IconName>PORT_LDD</IconName>
@@ -39747,7 +39747,7 @@
         <InheritedComponentState>
           <BeanType>BitIO</BeanType>
           <Name>C21</Name>
-          <CompNumb>101</CompNumb>
+          <CompNumb>134</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -39790,7 +39790,7 @@
               <InheritedComponentState>
                 <BeanType>BitIO_LDD</BeanType>
                 <Name>BitIoLdd17</Name>
-                <CompNumb>103</CompNumb>
+                <CompNumb>136</CompNumb>
                 <CompEnabled>true</CompEnabled>
                 <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
                 <IconName>PORT_LDD</IconName>
@@ -40352,7 +40352,7 @@
         <InheritedComponentState>
           <BeanType>EventCntr16</BeanType>
           <Name>Capture1</Name>
-          <CompNumb>104</CompNumb>
+          <CompNumb>137</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>EVCNTR</IconName>
@@ -40604,7 +40604,7 @@
               <InheritedComponentState>
                 <BeanType>EventCntr_LDD</BeanType>
                 <Name>EventCntrLdd1</Name>
-                <CompNumb>105</CompNumb>
+                <CompNumb>138</CompNumb>
                 <CompEnabled>true</CompEnabled>
                 <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
                 <IconName>TRIGGER</IconName>
@@ -41133,7 +41133,7 @@
         <InheritedComponentState>
           <BeanType>BitIO</BeanType>
           <Name>C22</Name>
-          <CompNumb>106</CompNumb>
+          <CompNumb>139</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -41176,7 +41176,7 @@
               <InheritedComponentState>
                 <BeanType>BitIO_LDD</BeanType>
                 <Name>BitIoLdd18</Name>
-                <CompNumb>107</CompNumb>
+                <CompNumb>140</CompNumb>
                 <CompEnabled>true</CompEnabled>
                 <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
                 <IconName>PORT_LDD</IconName>
@@ -41852,7 +41852,7 @@
   <Bean>
     <BeanType>QuadCounter</BeanType>
     <Name>Q4CRight</Name>
-    <CompNumb>108</CompNumb>
+    <CompNumb>141</CompNumb>
     <CompEnabled>true</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>QuadEncoder</IconName>
@@ -41915,7 +41915,7 @@
         <InheritedComponentState>
           <BeanType>BitIO</BeanType>
           <Name>C12</Name>
-          <CompNumb>109</CompNumb>
+          <CompNumb>142</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -41958,7 +41958,7 @@
               <InheritedComponentState>
                 <BeanType>BitIO_LDD</BeanType>
                 <Name>BitIoLdd19</Name>
-                <CompNumb>111</CompNumb>
+                <CompNumb>144</CompNumb>
                 <CompEnabled>true</CompEnabled>
                 <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
                 <IconName>PORT_LDD</IconName>
@@ -42504,7 +42504,7 @@
         <InheritedComponentState>
           <BeanType>BitIO</BeanType>
           <Name>C23</Name>
-          <CompNumb>110</CompNumb>
+          <CompNumb>143</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -42547,7 +42547,7 @@
               <InheritedComponentState>
                 <BeanType>BitIO_LDD</BeanType>
                 <Name>BitIoLdd20</Name>
-                <CompNumb>112</CompNumb>
+                <CompNumb>145</CompNumb>
                 <CompEnabled>true</CompEnabled>
                 <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
                 <IconName>PORT_LDD</IconName>
@@ -43109,7 +43109,7 @@
         <InheritedComponentState>
           <BeanType>EventCntr16</BeanType>
           <Name>Capture2</Name>
-          <CompNumb>113</CompNumb>
+          <CompNumb>146</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>EVCNTR</IconName>
@@ -43361,7 +43361,7 @@
               <InheritedComponentState>
                 <BeanType>EventCntr_LDD</BeanType>
                 <Name>EventCntrLdd2</Name>
-                <CompNumb>114</CompNumb>
+                <CompNumb>147</CompNumb>
                 <CompEnabled>true</CompEnabled>
                 <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
                 <IconName>TRIGGER</IconName>
@@ -43546,7 +43546,7 @@
                     <ItemSymbol>LinkedTimerUnit</ItemSymbol>
                     <ReadOnly>false</ReadOnly>
                     <UserReadOnly>false</UserReadOnly>
-                    <Value />
+                    <Value>MOTTU</Value>
                   </ItemState>
                 </Properties>
                 <Methods>
@@ -43890,7 +43890,7 @@
         <InheritedComponentState>
           <BeanType>BitIO</BeanType>
           <Name>C24</Name>
-          <CompNumb>115</CompNumb>
+          <CompNumb>148</CompNumb>
           <CompEnabled>true</CompEnabled>
           <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
           <IconName>BITIO</IconName>
@@ -43933,7 +43933,7 @@
               <InheritedComponentState>
                 <BeanType>BitIO_LDD</BeanType>
                 <Name>BitIoLdd21</Name>
-                <CompNumb>116</CompNumb>
+                <CompNumb>149</CompNumb>
                 <CompEnabled>true</CompEnabled>
                 <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
                 <IconName>PORT_LDD</IconName>
