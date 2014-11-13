@@ -88,6 +88,7 @@
 #include "../../../Board_FRDM/Common/Shell.h"
 #include "../../../Board_FRDM/Common/ShellQueue.h"
 #include "../../../Board_FRDM/Common/Reflectance.h"
+#include "../../../Board_FRDM/Common/Sem.h"
 
 void OnTriggerBlink(void*);
 
