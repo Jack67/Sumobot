@@ -112,10 +112,10 @@ static const CLS1_ParseCommandCallback CmdParserTable[] =
   REF_ParseCommand,
 #endif
 #if PL_HAS_MPC4728
-  MPC4728_ParseCommand
+  MPC4728_ParseCommand,
 #endif
 #if PL_HAS_QUAD_CALIBRATION
-  QUADCALIB_ParseCommand
+  QUADCALIB_ParseCommand,
 #endif
   NULL /* Sentinel */
 };

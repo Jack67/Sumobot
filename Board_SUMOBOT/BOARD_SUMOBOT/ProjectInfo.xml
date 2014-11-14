@@ -57,8 +57,11 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\KeyDebounce.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Keys.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\LED.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\MPC4728.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Motor.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\NVM_Config.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Platform.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\QuadCalib.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\RTOS.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Reflectance.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Sem.c</PathName>
@@ -99,13 +102,17 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\DIRL.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\DIRR.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\FRTOS1.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\GI2C1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\HF1.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\I2C1.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IFsh1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IR1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IR2.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IR3.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IR4.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IR5.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IR6.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IntFlashLdd1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\LED_Green.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\LED_IR.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\LED_Red.c</PathName>
@@ -125,6 +132,7 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\SW1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\Serial1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TI1.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TMOUT1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TU1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TU_MPC4728.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TimerIntLdd1.c</PathName>
@@ -164,8 +172,11 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\KeyDebounce.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Keys.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\LED.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\MPC4728.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Motor.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\NVM_Config.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Platform.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\QuadCalib.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\RTOS.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Reflectance.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Sem.h</PathName>
@@ -209,7 +220,10 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\FSL_USB_Stack_Config.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\FreeRTOS.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\FreeRTOSConfig.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\GI2C1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\HF1.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\I2C1.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IFsh1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IO_Map.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IR1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IR2.h</PathName>
@@ -217,6 +231,7 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IR4.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IR5.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IR6.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\IntFlashLdd1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\LED_Green.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\LED_IR.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\LED_Red.h</PathName>
@@ -240,6 +255,7 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\Serial1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\StackMacros.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TI1.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TMOUT1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TU1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TU_MPC4728.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\TimerIntLdd1.h</PathName>

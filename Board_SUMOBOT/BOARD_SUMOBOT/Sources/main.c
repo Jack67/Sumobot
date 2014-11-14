@@ -95,6 +95,11 @@
 #include "BitIoLdd19.h"
 #include "C23.h"
 #include "BitIoLdd20.h"
+#include "IFsh1.h"
+#include "IntFlashLdd1.h"
+#include "I2C1.h"
+#include "GI2C1.h"
+#include "TMOUT1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -114,6 +119,8 @@
 #include "../../../Board_FRDM/Common/Reflectance.h"
 #include "../../../Board_FRDM/Common/Sem.h"
 #include "../../../Board_FRDM/Common/Motor.h"
+#include "../../../Board_FRDM/Common/MPC4728.h"
+#include "../../../Board_FRDM/Common/QuadCalib.h"
 
 void OnTriggerBlink(void*);
 
