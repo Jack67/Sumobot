@@ -42,6 +42,7 @@
 	#define PL_IS_FRDM 1
 
 	#define PL_HAS_QUAD_CALIBRATION 0
+	#define PL_HAS_MPC4728	0
 #endif
 
 #ifdef PL_BOARD_IS_ROBOT
@@ -77,6 +78,7 @@
 	#define PL_IS_ROBO 1
 
 	#define PL_HAS_QUAD_CALIBRATION 1
+	#define PL_HAS_MPC4728	1
 #endif
 
 
