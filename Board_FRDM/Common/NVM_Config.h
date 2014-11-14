@@ -33,6 +33,10 @@
 #define NVMC_REFLECTANCE_DATA_SIZE        (8*2*2) /* maximum of 8 sensors (min and max) values with 16 bits */
 #define NVMC_REFLECTANCE_END_ADDR         (NVMC_REFLECTANCE_DATA_START_ADDR+NVMC_REFLECTANCE_DATA_SIZE)
 
+#define NVMC_Status_DATA_START_ADDR  (NVMC_REFLECTANCE_END_ADDR)
+#define NVMC_STATUS_DATA_SIZE        (1)
+#define NVMC_Status_END_ADDR         (NVMC_STATUS_DATA_START_ADDR+NVMC_STATUS_DATA_SIZE)
+
 /*!
  * \brief Saves the reflectance calibration data
  * \param data Pointer to the data
@@ -46,6 +50,11 @@ uint8_t NVMC_SaveReflectanceData(void *data, uint16_t dataSize);
  * \return Pointer to data, or NULL for failure
  */
 void *NVMC_GetReflectanceData(void);
+
+
+uint8_t NVMC_SaveStatus(void *data, uint16_t dataSize);
+void *NVMC_GetStatus(void);
+
 
 /*! \brief Driver initialization  */
 void NVMC_Init(void);
