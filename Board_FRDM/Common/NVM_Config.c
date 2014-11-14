@@ -39,16 +39,20 @@ void *NVMC_GetReflectanceData(void) {
 
 uint8_t NVMC_SaveStatus(void *data, uint16_t dataSize)
 {
-	if (dataSize>NVMC_Status_DATA_SIZE)
+	if (dataSize>NVMC_STATUS_DATA_SIZE)
 	{
 		return ERR_OVERFLOW;
 	}
-	return IFsh1_SetBlockFlash(data, (IFsh1_TAddress)(NVMC_Status_DATA_START_ADDR), dataSize);
+	return IFsh1_SetBlockFlash(data, (IFsh1_TAddress)(NVMC_STATUS_DATA_START_ADDR), dataSize);
 }
 
 void *NVMC_GetStatus(void)
 {
-
+	if (isErased((uint8_t*)NVMC_STATUS_DATA_START_ADDR, NVMC_STATUS_DATA_SIZE))
+	{
+	    return NULL;
+	}
+	return (void*)NVMC_STATUS_DATA_START_ADDR;
 
 }
 

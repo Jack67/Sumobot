@@ -13,25 +13,88 @@
 #include "Reflectance.h"
 #include "Event.h"
 #include "Keys.h"
+#include "NVM_Config.h"
 
+#ifdef PL_BOARD_IS_ROBOT
 static portTASK_FUNCTION(T1, pvParameters) {
   for(;;) {
 	  KEY_Scan();
-	  if (EVNT_EventIsSet(EVNT_SW1_PRESSED)) {
+	  if (EVNT_EventIsSet(EVNT_SW1_PRESSED))
+	  {
 	     EVNT_ClearEvent(EVNT_SW1_PRESSED);
+#if PL_HAS_LINE_SENSOR == 1
 	     EVNT_SetEvent(EVNT_REF_START_STOP_CALIBRATION);
+#endif
 	  }
 	  FRTOS1_vTaskDelay(200);
   }
 }
+#endif
 
+/*
 static portTASK_FUNCTION(T2, pvParameters) {
   for(;;) {
     LED_Green_Neg();
     SHELL_SendString("500ms\r\n");
     FRTOS1_vTaskDelay(500);
   }
+}*/
+
+#ifdef PL_BOARD_IS_FRDM
+char status = 0;
+static portTASK_FUNCTION(T3, pvParameters)
+{
+
+	char* pstatus = (char*)NVMC_GetStatus();
+	if(pstatus != NULL)
+	{
+		status = *pstatus;
+	}
+
+	for(;;)
+	{
+		switch(status)
+		{
+		case 0:
+			LED_Red_On();
+			LED_Blue_Off();
+			LED_Green_Off();
+			break;
+		case 1:
+			LED_Red_Off();
+			LED_Blue_On();
+			LED_Green_Off();
+			break;
+		case 2:
+			LED_Red_Off();
+			LED_Blue_Off();
+			LED_Green_On();
+			break;
+		}
+
+    	FRTOS1_vTaskDelay(2500);
+    	status = (status+1) % 3;
+	}
 }
+
+static portTASK_FUNCTION(T4, pvParameters)
+{
+	for(;;)
+	{
+		KEY_Scan();
+		if (EVNT_EventIsSet(EVNT_SW1_PRESSED))
+		{
+		     EVNT_ClearEvent(EVNT_SW1_PRESSED);
+		     NVMC_SaveStatus(&status,1);
+		}
+
+		FRTOS1_vTaskDelay(200);
+	}
+
+}
+
+#endif
+
 
 void RTOS_Run(void)
 {
@@ -40,17 +103,29 @@ void RTOS_Run(void)
 
 void RTOS_Init(void)
 {
-
+#ifdef PL_BOARD_IS_ROBOT
  if (FRTOS1_xTaskCreate(T1, (signed portCHAR *)"T1", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
   {
     for(;;){}
   }
+#endif
 /*
   if (FRTOS1_xTaskCreate(T2, (signed portCHAR *)"T2", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
   {
       for(;;){}
   }
 */
+#ifdef PL_BOARD_IS_FRDM
+ if (FRTOS1_xTaskCreate(T3, (signed portCHAR *)"T3", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
+ {
+     for(;;){}
+ }
+ if (FRTOS1_xTaskCreate(T4, (signed portCHAR *)"T4", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
+ {
+     for(;;){}
+ }
+#endif
+
 }
 
 void RTOS_Deinit(void) {
