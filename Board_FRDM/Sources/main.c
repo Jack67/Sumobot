@@ -84,6 +84,7 @@
 #include "../Common/Shell.h"
 #include "../Common/ShellQueue.h"
 #include "../Common/Sem.h"
+#include "../Common/NVM_Config.h"
 
 void OnEvent(EVNT_Handle);
 void OnTriggerBlink(void*);
@@ -111,6 +112,9 @@ int main(void)
   SHELL_Init();
   TRG_Init();
   SEM_Init();
+  NVMC_Init();
+
+
   RTOS_Init();
 
   RTOS_Run();

@@ -37,6 +37,21 @@ void *NVMC_GetReflectanceData(void) {
   return (void*)NVMC_REFLECTANCE_DATA_START_ADDR;
 }
 
+uint8_t NVMC_SaveStatus(void *data, uint16_t dataSize)
+{
+	if (dataSize>NVMC_Status_DATA_SIZE)
+	{
+		return ERR_OVERFLOW;
+	}
+	return IFsh1_SetBlockFlash(data, (IFsh1_TAddress)(NVMC_Status_DATA_START_ADDR), dataSize);
+}
+
+void *NVMC_GetStatus(void)
+{
+
+
+}
+
 void NVMC_Init(void) {
   /* nothing needed */
 }
