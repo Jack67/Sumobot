@@ -10,7 +10,7 @@
 /*##                                   */
 /*##     Compiler  : GNU C Compiler    */
 /*##                                   */
-/*##     Date/Time : 2014-10-16, 13:50, # CodeGen: 0 */
+/*##     Date/Time : 2014-11-14, 16:23, # CodeGen: 14 */
 /*##                                   */
 /*##     Abstract  :                   */
 /*##                                   */
@@ -37,9 +37,10 @@ __stack_size = 0x0400;                 /* required amount of stack */
 
 MEMORY {
   m_interrupts (RX) : ORIGIN = 0x00000000, LENGTH = 0x00000188
-  m_text      (RX) : ORIGIN = 0x00000410, LENGTH = 0x0007FBF0
+  m_text      (RX) : ORIGIN = 0x00000410, LENGTH = 0x0007EBF0
   m_data      (RW) : ORIGIN = 0x1FFF8000, LENGTH = 0x00008000
   m_data_20000000 (RW) : ORIGIN = 0x20000000, LENGTH = 0x00008000
+  NVM_Config  (RW) : ORIGIN = 0x0007F000, LENGTH = 0x00001000
   m_cfmprotrom  (RX) : ORIGIN = 0x00000400, LENGTH = 0x00000010
 }
 
@@ -170,6 +171,18 @@ SECTIONS
   ___m_data_20000000_ROMSize = ___m_data_20000000_RAMEnd - ___m_data_20000000_RAMStart;
 
 
+  ___NVM_Config_ROMStart = ___m_data_20000000_ROMStart + SIZEOF(.m_data_20000000);
+  .NVM_Config : AT(___NVM_Config_ROMStart)
+  {
+     . = ALIGN(4);
+     ___NVM_Config_RAMStart = .;
+     *(.NVM_Config) /* This is an User defined section */
+     ___NVM_Config_RAMEnd = .;
+     . = ALIGN(4);
+  } > NVM_Config
+  ___NVM_Config_ROMSize = ___NVM_Config_RAMEnd - ___NVM_Config_RAMStart;
+
+
 
   /* Uninitialized data section */
   . = ALIGN(4);
@@ -188,7 +201,7 @@ SECTIONS
  	  PROVIDE ( __bss_end__ = __END_BSS );
   } > m_data
 
-  _romp_at = ___ROM_AT + SIZEOF(.data) +SIZEOF(.m_data_20000000);
+  _romp_at = ___ROM_AT + SIZEOF(.data) +SIZEOF(.m_data_20000000) +SIZEOF(.NVM_Config);
   .romp : AT(_romp_at)
   {
     __S_romp = _romp_at;
@@ -198,6 +211,9 @@ SECTIONS
     LONG(___m_data_20000000_ROMStart);
     LONG(___m_data_20000000_RAMStart);
     LONG(___m_data_20000000_ROMSize);
+    LONG(___NVM_Config_ROMStart);
+    LONG(___NVM_Config_RAMStart);
+    LONG(___NVM_Config_ROMSize);
     LONG(0);
     LONG(0);
     LONG(0);

@@ -16,7 +16,7 @@
   #define NVMC_FLASH_START_ADDR    0x1FC00 
   /*!< NVRM_Config, start address of configuration data in flash */
 #elif PL_IS_ROBO
-  #define NVMC_FLASH_START_ADDR    0x7FC00 /* NVRM_Config, start address of configuration data in flash */
+  #define NVMC_FLASH_START_ADDR    0x7F000 /* NVRM_Config, start address of configuration data in flash */
 //  #define NVMC_FLASH_START_ADDR    0x0 /*! \todo Define your address */
   /*!< NVRM_Config, start address of configuration data in flash */
 #else
