@@ -11,12 +11,18 @@
 #include "Timer.h"
 #include "Trigger.h"
 
+#if PL_HAS_MOTOR_TACHO
+#include "Tacho.h"
+#endif
+
 int counter = 0;
 
 void TMR_OnInterrupt(void) {
   /* this one gets called from an interrupt all 1ms!!!! */
 
 	TRG_IncTick(); //call trigger
+
+	TACHO_Sample(); //call Tacho
 
 
 	counter++;

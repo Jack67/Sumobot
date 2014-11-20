@@ -121,6 +121,7 @@
 #include "../../../Board_FRDM/Common/Motor.h"
 #include "../../../Board_FRDM/Common/MPC4728.h"
 #include "../../../Board_FRDM/Common/QuadCalib.h"
+#include "../../../Board_FRDM/Common/Tacho.h"
 
 void OnTriggerBlink(void*);
 
@@ -153,6 +154,7 @@ int main(void)
   REF_Init();
 
   MOT_Init();
+  TACHO_Init();
 
   RTOS_Init();
   RTOS_Run();

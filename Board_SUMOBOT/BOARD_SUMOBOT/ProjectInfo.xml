@@ -67,6 +67,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\Sem.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\Shell.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\ShellQueue.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\Tacho.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\Timer.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\Trigger.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\ASerialLdd1.c</PathName>
@@ -182,6 +183,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\Sem.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\Shell.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\ShellQueue.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\Tacho.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\Timer.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Common\Trigger.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\ASerialLdd1.h</PathName>
