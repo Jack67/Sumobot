@@ -91,6 +91,8 @@ MOT_Direction MOT_GetDirection(MOT_MotorDevice *motor);
 uint8_t MOT_ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 #endif /* PL_HAS_SHELL */
 
+MOT_MotorDevice* getMotorL(void);
+MOT_MotorDevice* getMotorR(void);
 /*!
  * \brief Deinitialization function.
  */

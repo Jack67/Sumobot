@@ -24,11 +24,23 @@
    */
   uint8_t REF_ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io);
 
+  typedef enum {
+    REF_STATE_INIT,
+    REF_STATE_NOT_CALIBRATED,
+    REF_STATE_START_CALIBRATION,
+    REF_STATE_CALIBRATING,
+    REF_STATE_STOP_CALIBRATION,
+    REF_STATE_READY
+  } RefStateType;
+
   #define REF_PARSE_COMMAND_ENABLED 1
 #else
   #define REF_PARSE_COMMAND_ENABLED 0
 #endif
 
+  char isColorWhite(void);
+  char isRobotFlipped(void);
+  RefStateType getRefState(void);
 /*!
  * \brief Driver Deinitialization.
  */
