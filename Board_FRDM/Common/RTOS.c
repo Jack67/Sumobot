@@ -14,6 +14,7 @@
 #include "Event.h"
 #include "Keys.h"
 #include "NVM_Config.h"
+#include "motor.h"
 
 #ifdef PL_BOARD_IS_ROBOT
 static portTASK_FUNCTION(T1, pvParameters) {
@@ -21,6 +22,7 @@ static portTASK_FUNCTION(T1, pvParameters) {
 	  KEY_Scan();
 	  if (EVNT_EventIsSet(EVNT_SW1_PRESSED))
 	  {
+		  LED_Red_Neg();
 	     EVNT_ClearEvent(EVNT_SW1_PRESSED);
 #if PL_HAS_LINE_SENSOR == 1
 	     EVNT_SetEvent(EVNT_REF_START_STOP_CALIBRATION);
@@ -31,14 +33,26 @@ static portTASK_FUNCTION(T1, pvParameters) {
 }
 #endif
 
-/*
+#ifdef PL_BOARD_IS_ROBOT
 static portTASK_FUNCTION(T2, pvParameters) {
   for(;;) {
-    LED_Green_Neg();
-    SHELL_SendString("500ms\r\n");
-    FRTOS1_vTaskDelay(500);
+	  if(getRefState() == REF_STATE_READY)
+	  {
+		  if(!(isColorWhite() || isRobotFlipped()))
+		  {
+			  MOT_SetSpeedPercent(getMotorL(), (MOT_SpeedPercent)10);
+		  	  MOT_SetSpeedPercent(getMotorR(), (MOT_SpeedPercent)10);
+		  }
+		  else
+		  {
+			  MOT_SetSpeedPercent(getMotorL(), (MOT_SpeedPercent)0);
+		  	  MOT_SetSpeedPercent(getMotorR(), (MOT_SpeedPercent)0);
+		  }
+	  }
+	  FRTOS1_vTaskDelay(10);
   }
-}*/
+}
+#endif
 
 #ifdef PL_BOARD_IS_FRDM
 char status = 0;
@@ -109,12 +123,13 @@ void RTOS_Init(void)
     for(;;){}
   }
 #endif
-/*
+#ifdef PL_BOARD_IS_ROBOT
   if (FRTOS1_xTaskCreate(T2, (signed portCHAR *)"T2", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
   {
       for(;;){}
   }
-*/
+#endif
+
 #ifdef PL_BOARD_IS_FRDM
  if (FRTOS1_xTaskCreate(T3, (signed portCHAR *)"T3", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
  {

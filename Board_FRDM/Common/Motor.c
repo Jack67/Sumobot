@@ -17,6 +17,17 @@
 
 static MOT_MotorDevice motorL, motorR;
 
+MOT_MotorDevice* getMotorL(void)
+{
+	return &motorL;
+}
+
+MOT_MotorDevice* getMotorR(void)
+{
+	return &motorR;
+}
+
+
 MOT_MotorDevice *MOT_GetMotorHandle(MOT_MotorSide side) {
   if (side==MOT_MOTOR_LEFT) {
     return &motorL;

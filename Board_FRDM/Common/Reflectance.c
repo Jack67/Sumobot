@@ -27,14 +27,10 @@
 #define REF_NOF_SENSORS 6 /* number of sensors */
 #define IR_TIMEOUT		46875 /* 100ms */
 
-typedef enum {
-  REF_STATE_INIT,
-  REF_STATE_NOT_CALIBRATED,
-  REF_STATE_START_CALIBRATION,
-  REF_STATE_CALIBRATING,
-  REF_STATE_STOP_CALIBRATION,
-  REF_STATE_READY
-} RefStateType;
+#define WHITEVALUE		0x0001
+#define FLIPPEDVALUE	0x03E0
+
+
 static volatile RefStateType refState = REF_STATE_INIT; /* state machine state */
 
 static LDD_TDeviceData *timerHandle;
@@ -334,6 +330,33 @@ static portTASK_FUNCTION(ReflTask, pvParameters) {
     REF_StateMachine();
     FRTOS1_vTaskDelay(10/portTICK_RATE_MS);
   }
+}
+
+char isColorWhite(void)
+{
+	int i;
+	for(i = 0; i < REF_NOF_SENSORS; i++)
+	{
+		if(SensorCalibrated[i] < WHITEVALUE)
+			return 1;
+	}
+	return 0;
+}
+
+char isRobotFlipped(void)
+{
+	int i;
+	for(i = 0; i < REF_NOF_SENSORS; i++)
+	{
+		if(SensorCalibrated[i] > FLIPPEDVALUE)
+			return 1;
+	}
+	return 0;
+}
+
+RefStateType getRefState(void)
+{
+	return refState;
 }
 
 void REF_Deinit(void) {
