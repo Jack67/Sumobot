@@ -337,10 +337,10 @@ char isColorWhite(void)
 	int i;
 	for(i = 0; i < REF_NOF_SENSORS; i++)
 	{
-		if(SensorCalibrated[i] < WHITEVALUE)
-			return 1;
+		if(SensorCalibrated[i] > WHITEVALUE)
+			return 0;
 	}
-	return 0;
+	return 1;
 }
 
 char isRobotFlipped(void)
@@ -348,10 +348,10 @@ char isRobotFlipped(void)
 	int i;
 	for(i = 0; i < REF_NOF_SENSORS; i++)
 	{
-		if(SensorCalibrated[i] > FLIPPEDVALUE)
-			return 1;
+		if(SensorCalibrated[i] < FLIPPEDVALUE)
+			return 0;
 	}
-	return 0;
+	return 1;
 }
 
 RefStateType getRefState(void)
