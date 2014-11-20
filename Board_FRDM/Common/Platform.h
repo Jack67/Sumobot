@@ -43,6 +43,8 @@
 
 	#define PL_HAS_QUAD_CALIBRATION 0
 	#define PL_HAS_MPC4728	0
+
+	#define PL_HAS_MOTOR_TACHO 0
 #endif
 
 #ifdef PL_BOARD_IS_ROBOT
@@ -79,6 +81,8 @@
 
 	#define PL_HAS_QUAD_CALIBRATION 1
 	#define PL_HAS_MPC4728	1
+
+	#define PL_HAS_MOTOR_TACHO 1
 #endif
 
 

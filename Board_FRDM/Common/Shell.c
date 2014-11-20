@@ -33,6 +33,9 @@
 #if PL_HAS_QUAD_CALIBRATION
 	#include "QuadCalib.h"
 #endif
+#if PL_HAS_MOTOR_TACHO
+	#include "Tacho.h"
+#endif
 
 static uint32_t SHELL_val; /* used as demo value for shell */
 
@@ -116,6 +119,9 @@ static const CLS1_ParseCommandCallback CmdParserTable[] =
 #endif
 #if PL_HAS_QUAD_CALIBRATION
   QUADCALIB_ParseCommand,
+#endif
+#if PL_HAS_MOTOR_TACHO
+  TACHO_ParseCommand,
 #endif
   NULL /* Sentinel */
 };
