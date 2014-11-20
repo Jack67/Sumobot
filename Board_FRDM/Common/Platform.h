@@ -45,7 +45,9 @@
 	#define PL_HAS_MPC4728	0
 
 	#define PL_HAS_MOTOR_TACHO 0
-	#define PL_HAS_MOTOR QUAD 0
+	#define PL_HAS_MOTOR_QUAD 0
+	#define PL_HAS_DRIVE 0
+	#define PL_HAS_PID 0
 #endif
 
 #ifdef PL_BOARD_IS_ROBOT
@@ -84,7 +86,9 @@
 	#define PL_HAS_MPC4728	1
 
 	#define PL_HAS_MOTOR_TACHO 1
-	#define PL_HAS_MOTOR QUAD 1
+	#define PL_HAS_MOTOR_QUAD 1
+	#define PL_HAS_DRIVE 1
+	#define PL_HAS_PID 1
 #endif
 
 

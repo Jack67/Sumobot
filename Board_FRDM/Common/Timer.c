@@ -14,6 +14,10 @@
 #if PL_HAS_MOTOR_TACHO
 #include "Tacho.h"
 #endif
+#if PL_HAS_MOTOR_QUAD
+	#include "Q4CLeft.h"
+	#include "Q4CRight.h"
+#endif
 
 int counter = 0;
 
@@ -22,7 +26,15 @@ void TMR_OnInterrupt(void) {
 
 	TRG_IncTick(); //call trigger
 
+#if PL_HAS_MOTOR_QUAD
+	Q4CLeft_Sample();
+	Q4CRight_Sample();
+#endif
+
+#if PL_HAS_MOTOR_TACHO
 	TACHO_Sample(); //call Tacho
+#endif
+
 
 
 	counter++;
