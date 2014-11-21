@@ -124,6 +124,7 @@
 #include "../../../Board_FRDM/Common/Tacho.h"
 #include "../../../Board_FRDM/Common/Drive.h"
 #include "../../../Board_FRDM/Common/Pid.h"
+#include "../../../Board_FRDM/Common/Ultrasonic.h"
 
 void OnTriggerBlink(void*);
 
@@ -159,6 +160,8 @@ int main(void)
   TACHO_Init();
   PID_Init();
   DRV_Init();
+
+  US_Init();
 
   RTOS_Init();
   RTOS_Run();
