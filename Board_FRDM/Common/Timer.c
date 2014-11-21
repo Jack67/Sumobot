@@ -26,10 +26,7 @@ void TMR_OnInterrupt(void) {
 
 	TRG_IncTick(); //call trigger
 
-#if PL_HAS_MOTOR_QUAD
-	Q4CLeft_Sample();
-	Q4CRight_Sample();
-#endif
+
 
 #if PL_HAS_MOTOR_TACHO
 	TACHO_Sample(); //call Tacho

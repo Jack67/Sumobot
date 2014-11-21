@@ -20,7 +20,7 @@
 **         Main module.
 **         This module contains user's application code.
 */         
-/*!
+/*!m
 **  @addtogroup main_module main module documentation
 **  @{
 */         
@@ -100,6 +100,9 @@
 #include "I2C1.h"
 #include "GI2C1.h"
 #include "TMOUT1.h"
+#include "QuadInt.h"
+#include "TimerIntLdd2.h"
+#include "TU_QuadInt.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
