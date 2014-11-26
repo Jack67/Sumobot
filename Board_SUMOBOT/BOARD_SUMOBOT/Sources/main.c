@@ -35,9 +35,6 @@
 #include "HF1.h"
 #include "LED_Green.h"
 #include "BitIoLdd1.h"
-#include "TI1.h"
-#include "TimerIntLdd1.h"
-#include "TU1.h"
 #include "SW1.h"
 #include "BitIoLdd2.h"
 #include "BUZ1.h"
@@ -103,6 +100,8 @@
 #include "QuadInt.h"
 #include "TimerIntLdd2.h"
 #include "TU_QuadInt.h"
+#include "TU_US.h"
+#include "TRIG.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"

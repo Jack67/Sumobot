@@ -113,7 +113,7 @@ void TACHO_Sample(void) {
     TACHO_PosHistory_Index = 0;
   }
   /* \todo Temporary only! You will need to do this later before doing PID calculation */
-  TACHO_CalcSpeed();
+  //TACHO_CalcSpeed();
 #else
   /*! \todo Implement function */ 
 #endif
