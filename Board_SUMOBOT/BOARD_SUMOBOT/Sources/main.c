@@ -102,6 +102,7 @@
 #include "TU_QuadInt.h"
 #include "TU_US.h"
 #include "TRIG.h"
+#include "MMA1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -127,6 +128,7 @@
 #include "../../../Board_FRDM/Common/Drive.h"
 #include "../../../Board_FRDM/Common/Pid.h"
 #include "../../../Board_FRDM/Common/Ultrasonic.h"
+#include "../../../Board_FRDM/Common/Accel.h"
 
 void OnTriggerBlink(void*);
 
@@ -164,6 +166,7 @@ int main(void)
   DRV_Init();
 
   US_Init();
+  ACCEL_Init();
 
   RTOS_Init();
   RTOS_Run();
