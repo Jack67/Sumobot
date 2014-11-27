@@ -68,6 +68,9 @@
 #include "Rx1.h"
 #include "IFsh1.h"
 #include "IntFlashLdd1.h"
+#include "I2C1.h"
+#include "GI2C1.h"
+#include "MMA1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -85,6 +88,7 @@
 #include "../Common/ShellQueue.h"
 #include "../Common/Sem.h"
 #include "../Common/NVM_Config.h"
+#include "../Common/Accel.h"
 
 void OnEvent(EVNT_Handle);
 void OnTriggerBlink(void*);
@@ -114,6 +118,7 @@ int main(void)
   SEM_Init();
   NVMC_Init();
 
+  ACCEL_Init();
 
   RTOS_Init();
 
