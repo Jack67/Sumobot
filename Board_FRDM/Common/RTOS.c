@@ -18,6 +18,7 @@
 
 #ifdef PL_BOARD_IS_ROBOT
 static portTASK_FUNCTION(T1, pvParameters) {
+	ACCEL_LowLevelInit();
   for(;;) {
 	  KEY_Scan();
 	  if (EVNT_EventIsSet(EVNT_SW1_PRESSED))
@@ -38,7 +39,7 @@ static portTASK_FUNCTION(T2, pvParameters) {
   for(;;) {
 	  if(getRefState() == REF_STATE_READY)
 	  {
-		  if(!(isColorWhite() || isRobotFlipped()))
+		  if(!(isColorWhite()))
 		  {
 			  MOT_SetSpeedPercent(getMotorL(), (MOT_SpeedPercent)10);
 		  	  MOT_SetSpeedPercent(getMotorR(), (MOT_SpeedPercent)10);
@@ -54,12 +55,15 @@ static portTASK_FUNCTION(T2, pvParameters) {
 }
 #endif
 
+
+
 #ifdef PL_BOARD_IS_FRDM
 char status = 0;
 static portTASK_FUNCTION(T3, pvParameters)
 {
 
 	char* pstatus = (char*)NVMC_GetStatus();
+	ACCEL_LowLevelInit();
 	if(pstatus != NULL)
 	{
 		status = *pstatus;

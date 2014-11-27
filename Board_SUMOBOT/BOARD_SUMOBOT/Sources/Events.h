@@ -106,6 +106,7 @@
 #include "TU_QuadInt.h"
 #include "TU_US.h"
 #include "TRIG.h"
+#include "MMA1.h"
 
 #ifdef __cplusplus
 extern "C" {
