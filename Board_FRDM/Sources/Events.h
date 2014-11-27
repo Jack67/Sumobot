@@ -72,6 +72,9 @@
 #include "Rx1.h"
 #include "IFsh1.h"
 #include "IntFlashLdd1.h"
+#include "I2C1.h"
+#include "GI2C1.h"
+#include "MMA1.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -182,6 +185,19 @@ void FRTOS1_vApplicationMallocFailedHook(void);
 */
 /* ===================================================================*/
 void IFsh1_OnWriteEnd(void);
+
+void GI2C1_OnError(void);
+/*
+** ===================================================================
+**     Event       :  GI2C1_OnError (module Events)
+**
+**     Component   :  GI2C1 [GenericI2C]
+**     Description :
+**         Event called in case of error condition
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
 
 /* END Events */
 

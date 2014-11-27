@@ -51,8 +51,10 @@
   </PATHS>
   <FILES>
     <GeneratedCs>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Accel.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Buzzer.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Debounce.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Drive.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Event.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\KeyDebounce.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Keys.c</PathName>
@@ -60,6 +62,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\MPC4728.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Motor.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\NVM_Config.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Pid.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Platform.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\QuadCalib.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\RTOS.c</PathName>
@@ -67,8 +70,10 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Sem.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Shell.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\ShellQueue.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Tacho.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Timer.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Trigger.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Ultrasonic.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\AS1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\ASerialLdd1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\BitIoLdd1.c</PathName>
@@ -86,12 +91,15 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\CS1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\Cpu.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\FRTOS1.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\GI2C1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\HF1.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\I2C1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\IFsh1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\IntFlashLdd1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\LED_Blue.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\LED_Green.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\LED_Red.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\MMA1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\PE_LDD.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\Rx1.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\SW1.c</PathName>
@@ -134,8 +142,10 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Sources\main.c</PathName>
     </GeneratedCs>
     <GeneratedHs>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Accel.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Buzzer.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Debounce.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Drive.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Event.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\KeyDebounce.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Keys.h</PathName>
@@ -143,6 +153,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\MPC4728.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Motor.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\NVM_Config.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Pid.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Platform.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\QuadCalib.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\RTOS.h</PathName>
@@ -150,8 +161,10 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Sem.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Shell.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\ShellQueue.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Tacho.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Timer.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Trigger.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Ultrasonic.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\AS1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\ASerialLdd1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\BitIoLdd1.h</PathName>
@@ -172,13 +185,16 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\FSL_USB_Stack_Config.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\FreeRTOS.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\FreeRTOSConfig.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\GI2C1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\HF1.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\I2C1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\IFsh1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\IO_Map.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\IntFlashLdd1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\LED_Blue.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\LED_Green.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\LED_Red.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\MMA1.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\PE_Const.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\PE_Error.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\PE_LDD.h</PathName>
