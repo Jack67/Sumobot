@@ -27,7 +27,7 @@
 #define REF_NOF_SENSORS 6 /* number of sensors */
 #define IR_TIMEOUT		46875 /* 100ms */
 
-#define WHITEVALUE		0x0001
+#define WHITEVALUE		0x0100
 #define FLIPPEDVALUE	0x03E0
 
 
@@ -337,10 +337,10 @@ char isColorWhite(void)
 	int i;
 	for(i = 0; i < REF_NOF_SENSORS; i++)
 	{
-		if(SensorCalibrated[i] > WHITEVALUE)
-			return 0;
+		if(SensorCalibrated[i] < WHITEVALUE)
+			return 1;
 	}
-	return 1;
+	return 0;
 }
 
 char isRobotFlipped(void)

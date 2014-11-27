@@ -20,7 +20,6 @@
 
 #ifdef PL_BOARD_IS_ROBOT
 static portTASK_FUNCTION(T1, pvParameters) {
-	//ACCEL_LowLevelInit();
   for(;;) {
 	  KEY_Scan();
 	  if (EVNT_EventIsSet(EVNT_SW1_PRESSED))
@@ -38,6 +37,7 @@ static portTASK_FUNCTION(T1, pvParameters) {
 
 #ifdef PL_BOARD_IS_ROBOT
 static portTASK_FUNCTION(T2, pvParameters) {
+	ACCEL_LowLevelInit();
   for(;;) {
 	  if(getRefState() == REF_STATE_READY)
 	  {
@@ -47,7 +47,10 @@ static portTASK_FUNCTION(T2, pvParameters) {
 		  }
 		  else
 		  {
-			  DRV_SetSpeed(0,0);
+			  DRV_SetSpeed(-1000,-1000);
+			  FRTOS1_vTaskDelay(500);
+			  DRV_SetSpeed(1000,-1000);
+			  FRTOS1_vTaskDelay(500);
 		  }
 	  }
 	  FRTOS1_vTaskDelay(10);
