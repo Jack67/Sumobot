@@ -15,10 +15,12 @@
 #include "Keys.h"
 #include "NVM_Config.h"
 #include "motor.h"
+#include "Accel.h"
+#include "Drive.h"
 
 #ifdef PL_BOARD_IS_ROBOT
 static portTASK_FUNCTION(T1, pvParameters) {
-	ACCEL_LowLevelInit();
+	//ACCEL_LowLevelInit();
   for(;;) {
 	  KEY_Scan();
 	  if (EVNT_EventIsSet(EVNT_SW1_PRESSED))
@@ -41,13 +43,11 @@ static portTASK_FUNCTION(T2, pvParameters) {
 	  {
 		  if(!(isColorWhite()))
 		  {
-			  MOT_SetSpeedPercent(getMotorL(), (MOT_SpeedPercent)10);
-		  	  MOT_SetSpeedPercent(getMotorR(), (MOT_SpeedPercent)10);
+			  DRV_SetSpeed(1000,1000);
 		  }
 		  else
 		  {
-			  MOT_SetSpeedPercent(getMotorL(), (MOT_SpeedPercent)0);
-		  	  MOT_SetSpeedPercent(getMotorR(), (MOT_SpeedPercent)0);
+			  DRV_SetSpeed(0,0);
 		  }
 	  }
 	  FRTOS1_vTaskDelay(10);
