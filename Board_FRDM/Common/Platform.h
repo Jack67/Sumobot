@@ -50,6 +50,8 @@
 	#define PL_HAS_PID 0
 
 	#define PL_HAS_ULTRASONIC 0
+
+	#define PL_HAS_ACCEL 1
 #endif
 
 #ifdef PL_BOARD_IS_ROBOT
@@ -93,6 +95,8 @@
 	#define PL_HAS_PID 1
 
 	#define PL_HAS_ULTRASONIC 1
+
+	#define PL_HAS_ACCEL 1
 #endif
 
 
