@@ -18,46 +18,93 @@
 #include "Accel.h"
 #include "Drive.h"
 
-#define MOTORSPEED		6000
-#define MOTOR_PAUSE		250
+#define MOTORSPEED			4000
+#define MOTORSEARCHSPEED	1000
+#define MOTOR_PAUSE			250
 
 #ifdef PL_BOARD_IS_ROBOT
-static portTASK_FUNCTION(T1, pvParameters) {
-  for(;;) {
-	  KEY_Scan();
-	  if (EVNT_EventIsSet(EVNT_SW1_PRESSED))
-	  {
-		  LED_Red_Neg();
-	     EVNT_ClearEvent(EVNT_SW1_PRESSED);
-#if PL_HAS_LINE_SENSOR == 1
-	     EVNT_SetEvent(EVNT_REF_START_STOP_CALIBRATION);
-#endif
-	  }
-	  FRTOS1_vTaskDelay(200);
-  }
+xSemaphoreHandle WhiteArea = NULL;
+
+static portTASK_FUNCTION(Reflectance, pvParameters) {
+	char fight = 0;
+
+	for(;;) {
+		if(fight)
+		{
+			if(isColorWhite())
+			{
+				xSemaphoreGive(WhiteArea);
+				if (xSemaphoreTake(WhiteArea, portMAX_DELAY)==pdTRUE)
+				{
+					DRV_SetSpeed(-MOTORSPEED,-MOTORSPEED);
+					FRTOS1_vTaskDelay(MOTOR_PAUSE);
+					DRV_SetSpeed(MOTORSPEED,-MOTORSPEED);
+					FRTOS1_vTaskDelay(MOTOR_PAUSE);
+				}
+				xSemaphoreGive(WhiteArea);
+			}
+		}
+		else
+		{
+			KEY_Scan();
+			if (EVNT_EventIsSet(EVNT_SW1_LPRESSED))
+			{
+				LED_Red_Neg();
+				EVNT_ClearEvent(EVNT_SW1_LPRESSED);
+				#if PL_HAS_LINE_SENSOR == 1
+					EVNT_SetEvent(EVNT_REF_START_STOP_CALIBRATION);
+				#endif
+			}
+			if (EVNT_EventIsSet(EVNT_SW1_PRESSED))
+			{
+				EVNT_ClearEvent(EVNT_SW1_PRESSED);
+				BUZ_Beep(100, 1000);
+				fight = fight % 1;
+				FRTOS1_vTaskDelay(5000);
+				BUZ_Beep(500, 500);
+			}
+			FRTOS1_vTaskDelay(1);
+		}
+	}
 }
 #endif
 
 #ifdef PL_BOARD_IS_ROBOT
-static portTASK_FUNCTION(T2, pvParameters) {
+static portTASK_FUNCTION(Ultrasonic, pvParameters) {
+	char search = 1;
+	uint16_t value;
 	ACCEL_LowLevelInit();
-  for(;;) {
-	  if(getRefState() == REF_STATE_READY)
-	  {
-		  if(!(isColorWhite()))
-		  {
-			  DRV_SetSpeed(MOTORSPEED,MOTORSPEED);
-		  }
-		  else
-		  {
-			  DRV_SetSpeed(-MOTORSPEED,-MOTORSPEED);
-			  FRTOS1_vTaskDelay(MOTOR_PAUSE);
-			  DRV_SetSpeed(MOTORSPEED,-MOTORSPEED);
-			  FRTOS1_vTaskDelay(MOTOR_PAUSE);
-		  }
-	  }
-	  FRTOS1_vTaskDelay(10);
-  }
+	for(;;)
+	{
+		if (xSemaphoreTake(WhiteArea, portMAX_DELAY)==pdTRUE)
+		{
+			if(search)
+			{
+				if(US_GetLastCentimeterValue() < 5)
+				{
+					search = 0;
+					DRV_SetSpeed(MOTORSPEED,MOTORSPEED);
+				}
+				else
+				{
+					DRV_SetSpeed(MOTORSEARCHSPEED,-MOTORSEARCHSPEED);
+				}
+			}
+			else
+			{
+				if(US_GetLastCentimeterValue() > 5)
+				{
+					search = 1;
+					DRV_SetSpeed(MOTORSEARCHSPEED,-MOTORSEARCHSPEED);
+				}
+				else
+				{
+					DRV_SetSpeed(MOTORSPEED,MOTORSPEED);
+				}
+			}
+		}
+		FRTOS1_vTaskDelay(10);
+	}
 }
 #endif
 
@@ -128,13 +175,13 @@ void RTOS_Run(void)
 void RTOS_Init(void)
 {
 #ifdef PL_BOARD_IS_ROBOT
- if (FRTOS1_xTaskCreate(T1, (signed portCHAR *)"T1", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
+	vSemaphoreCreateBinary(WhiteArea);
+ if (FRTOS1_xTaskCreate(Reflectance, (signed portCHAR *)"Reflectance", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
   {
     for(;;){}
   }
-#endif
-#ifdef PL_BOARD_IS_ROBOT
-  if (FRTOS1_xTaskCreate(T2, (signed portCHAR *)"T2", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
+
+  if (FRTOS1_xTaskCreate(Ultrasonic, (signed portCHAR *)"Ultrasonic", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS)
   {
       for(;;){}
   }

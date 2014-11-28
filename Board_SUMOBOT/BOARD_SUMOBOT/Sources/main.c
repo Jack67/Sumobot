@@ -129,6 +129,7 @@
 #include "../../../Board_FRDM/Common/Pid.h"
 #include "../../../Board_FRDM/Common/Ultrasonic.h"
 #include "../../../Board_FRDM/Common/Accel.h"
+#include "RNet_App.h"
 
 void OnTriggerBlink(void*);
 
@@ -167,6 +168,7 @@ int main(void)
 
   US_Init();
   ACCEL_Init();
+  RNETA_Init();
 
   RTOS_Init();
   RTOS_Run();
