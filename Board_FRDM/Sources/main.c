@@ -34,8 +34,6 @@
 #include "BitIoLdd1.h"
 #include "LED_Green.h"
 #include "BitIoLdd2.h"
-#include "LED_Blue.h"
-#include "BitIoLdd3.h"
 #include "WAIT.h"
 #include "HF1.h"
 #include "CS1.h"
@@ -107,7 +105,9 @@ int main(void)
   platform_Init();
   EVNT_Init();
   KEY_Init();
+#if PL_HAS_LED_BLUE
   LED_Blue_Init();
+#endif
   LED_Green_Init();
   LED_Red_Init();
   TMR_Init();

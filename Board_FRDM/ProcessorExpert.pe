@@ -3,8 +3,8 @@
   <Header>
     <Name>BOARD_FRDM</Name>
     <SavedBy>Elia</SavedBy>
-    <ModificationStamp>41</ModificationStamp>
-    <Date>2014-11-27</Date>
+    <ModificationStamp>42</ModificationStamp>
+    <Date>2014-11-28</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.10.0.RT6_b1428-0121</PEversion>
   </Header>
@@ -5785,7 +5785,7 @@
     <BeanType>BitIO</BeanType>
     <Name>LED_Blue</Name>
     <CompNumb>16</CompNumb>
-    <CompEnabled>true</CompEnabled>
+    <CompEnabled>false</CompEnabled>
     <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
     <IconName>BITIO</IconName>
     <UserFolderName />
