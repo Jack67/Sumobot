@@ -69,6 +69,14 @@
 #include "I2C1.h"
 #include "GI2C1.h"
 #include "MMA1.h"
+#include "RNET1.h"
+#include "RF1.h"
+#include "CE1.h"
+#include "BitIoLdd11.h"
+#include "CSN1.h"
+#include "BitIoLdd12.h"
+#include "SM1.h"
+#include "SMasterLdd1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -87,6 +95,8 @@
 #include "../Common/Sem.h"
 #include "../Common/NVM_Config.h"
 #include "../Common/Accel.h"
+#include "../Common/RNet_App.h"
+
 
 void OnEvent(EVNT_Handle);
 void OnTriggerBlink(void*);
@@ -119,6 +129,9 @@ int main(void)
   NVMC_Init();
 
   ACCEL_Init();
+
+  //RNET1_Init();
+  RNETA_Init();
 
   RTOS_Init();
 
@@ -156,7 +169,7 @@ void OnEvent(EVNT_Handle ev)
 		LED_Red_On();
 		break;
 	case EVNT_SW2_PRESSED:
-		LED_Blue_On();
+		//LED_Blue_On();
 		break;
 	case EVNT_SW3_PRESSED:
 		LED_Green_On();
@@ -165,7 +178,7 @@ void OnEvent(EVNT_Handle ev)
 		LED_Red_Off();
 		break;
 	case EVNT_SW2_LPRESSED:
-		LED_Blue_Off();
+		//LED_Blue_Off();
 		break;
 	case EVNT_SW3_LPRESSED:
 		LED_Green_Off();

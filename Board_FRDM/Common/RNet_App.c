@@ -13,7 +13,8 @@
 #if RNET_CONFIG_REMOTE_STDIO
   #include "RStdIO.h"
 #endif
-#include "Application.h"
+//#include "Application.h"
+
 #include "RNet_App.h"
 #include "Radio.h"
 #include "RStack.h"
@@ -117,7 +118,10 @@ static void Process(void) {
 
 static void Init(void) {
   if (RAPP_SetThisNodeAddr(RNWK_ADDR_BROADCAST)!=ERR_OK) { /* set a default address */
-    APP_DebugPrint((unsigned char*)"ERR: Failed setting node address\r\n");
+    //APP_DebugPrint((unsigned char*)"ERR: Failed setting node address\r\n");
+#if PL_HAS_SHELL
+	  CLS1_SendStr((unsigned char*)"ERR: Failed setting node address\r\n", CLS1_GetStdio()->stdOut);  //Debugbrint on shell
+#endif
   }
 }
 
@@ -137,8 +141,12 @@ void RNETA_Deinit(void) {
 
 void RNETA_Init(void) {
   RNET1_Init(); /* initialize stack */
-  if (RAPP_SetMessageHandlerTable(handlerTable)!=ERR_OK) { /* assign application message handler */
-    APP_DebugPrint((unsigned char*)"ERR: failed setting message handler!\r\n");
+  if (RAPP_SetMessageHandlerTable(handlerTable)!=ERR_OK)  /* assign application message handler */
+  {
+    //APP_DebugPrint((unsigned char*)"ERR: failed setting message handler!\r\n");
+#if PL_HAS_SHELL
+	  CLS1_SendStr((unsigned char*)"ERR: failed setting message handler!\r\n", CLS1_GetStdio()->stdOut);  //Debugbrint on shell
+#endif
   }
   if (FRTOS1_xTaskCreate(
         RadioTask,  /* pointer to the task */

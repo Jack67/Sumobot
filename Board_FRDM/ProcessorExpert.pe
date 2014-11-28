@@ -2,8 +2,8 @@
 <PEproject>
   <Header>
     <Name>BOARD_FRDM</Name>
-    <SavedBy>Michael Müller</SavedBy>
-    <ModificationStamp>43</ModificationStamp>
+    <SavedBy>Elia</SavedBy>
+    <ModificationStamp>60</ModificationStamp>
     <Date>2014-11-28</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.10.0.RT6_b1428-0121</PEversion>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>113</ProjectCompNumb>
+    <ProjectCompNumb>131</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -18193,7 +18193,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>3</Value>
+        <Value>5</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -18421,7 +18421,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>8192</Value>
+        <Value>9500</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -26013,7 +26013,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>20</Value>
+        <Value>84</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -26293,7 +26293,7 @@
         <ItemSymbol>Wait</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value>WAIT1</Value>
+        <Value>WAIT</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>CE</ItemSymbol>
