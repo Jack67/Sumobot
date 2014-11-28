@@ -27,7 +27,7 @@
 #define REF_NOF_SENSORS 6 /* number of sensors */
 #define IR_TIMEOUT		46875 /* 100ms */
 
-#define WHITEVALUE		0x0100
+#define WHITEVALUE		0x0001
 #define FLIPPEDVALUE	0x03E0
 
 
