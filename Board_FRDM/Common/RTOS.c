@@ -18,6 +18,9 @@
 #include "Accel.h"
 #include "Drive.h"
 
+#define MOTORSPEED		6000
+#define MOTOR_PAUSE		250
+
 #ifdef PL_BOARD_IS_ROBOT
 static portTASK_FUNCTION(T1, pvParameters) {
   for(;;) {
@@ -43,14 +46,14 @@ static portTASK_FUNCTION(T2, pvParameters) {
 	  {
 		  if(!(isColorWhite()))
 		  {
-			  DRV_SetSpeed(1000,1000);
+			  DRV_SetSpeed(MOTORSPEED,MOTORSPEED);
 		  }
 		  else
 		  {
-			  DRV_SetSpeed(-1000,-1000);
-			  FRTOS1_vTaskDelay(500);
-			  DRV_SetSpeed(1000,-1000);
-			  FRTOS1_vTaskDelay(500);
+			  DRV_SetSpeed(-MOTORSPEED,-MOTORSPEED);
+			  FRTOS1_vTaskDelay(MOTOR_PAUSE);
+			  DRV_SetSpeed(MOTORSPEED,-MOTORSPEED);
+			  FRTOS1_vTaskDelay(MOTOR_PAUSE);
 		  }
 	  }
 	  FRTOS1_vTaskDelay(10);
