@@ -19,7 +19,7 @@
 	#define PL_HAS_TRIGGER 	1
 
 	#define PL_HAS_LED_RED	1
-	#define PL_HAS_LED_BLUE	1
+	#define PL_HAS_LED_BLUE	0
 	#define PL_HAS_LED_GREEN	1
 
 	#define PL_HAS_DEBOUNCE 1
@@ -52,6 +52,7 @@
 	#define PL_HAS_ULTRASONIC 0
 
 	#define PL_HAS_ACCEL 1
+	#define PL_HAS_RADIO 1
 #endif
 
 #ifdef PL_BOARD_IS_ROBOT
@@ -97,6 +98,8 @@
 	#define PL_HAS_ULTRASONIC 1
 
 	#define PL_HAS_ACCEL 1
+
+	#define PL_HAS_RADIO 1
 #endif
 
 

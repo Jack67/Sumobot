@@ -81,17 +81,17 @@ static portTASK_FUNCTION(T3, pvParameters)
 		{
 		case 0:
 			LED_Red_On();
-			LED_Blue_Off();
+			//LED_Blue_Off();
 			LED_Green_Off();
 			break;
 		case 1:
 			LED_Red_Off();
-			LED_Blue_On();
+			//LED_Blue_On();
 			LED_Green_Off();
 			break;
 		case 2:
 			LED_Red_Off();
-			LED_Blue_Off();
+			//LED_Blue_Off();
 			LED_Green_On();
 			break;
 		}
