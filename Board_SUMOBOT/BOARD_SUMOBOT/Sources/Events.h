@@ -107,6 +107,16 @@
 #include "TU_US.h"
 #include "TRIG.h"
 #include "MMA1.h"
+#include "RNET1.h"
+#include "RF1.h"
+#include "CE1.h"
+#include "BitIoLdd22.h"
+#include "CSN1.h"
+#include "BitIoLdd23.h"
+#include "IRQ1.h"
+#include "ExtIntLdd1.h"
+#include "SM2_nRF.h"
+#include "SMasterLdd1.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -303,6 +313,22 @@ void TU_US_OnCounterRestart(LDD_TUserData *UserDataPtr);
 */
 /* ===================================================================*/
 void TU_US_OnChannel0(LDD_TUserData *UserDataPtr);
+
+void RNET1_OnRadioEvent(RNET1_RadioEvent event);
+/*
+** ===================================================================
+**     Event       :  RNET1_OnRadioEvent (module Events)
+**
+**     Component   :  RNET1 [RNet]
+**     Description :
+**         Event created for various radio states, like timeout, ack
+**         received, data sent, ...
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         event           - 
+**     Returns     : Nothing
+** ===================================================================
+*/
 
 /* END Events */
 
