@@ -30,7 +30,7 @@
 #define WHITEVALUE		0x0001
 #define FLIPPEDVALUE	0x03E0
 
-
+static xSemaphoreHandle mutexHandle; /* semaphore to protect access to sensor */
 static volatile RefStateType refState = REF_STATE_INIT; /* state machine state */
 
 static LDD_TDeviceData *timerHandle;
@@ -101,9 +101,10 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
   uint8_t i;
   char	str[] = "IR:  ";
 
+  FRTOS1_xSemaphoreTake(mutexHandle, portMAX_DELAY);
+
   LED_IR_On(); /* IR LED's on */
   WAIT1_Waitus(500); /*! \todo adjust time as needed */
-
   for(i=0;i<REF_NOF_SENSORS;i++) {
     SensorFctArray[i].SetOutput(); /* turn I/O line as output */
     SensorFctArray[i].SetVal(); /* put high */
@@ -143,6 +144,7 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
     }
   } while(cnt!=REF_NOF_SENSORS);
   LED_IR_Off();
+  FRTOS1_xSemaphoreGive(mutexHandle);
 }
 
 static void REF_CalibrateMinMax(SensorTimeType min[REF_NOF_SENSORS], SensorTimeType max[REF_NOF_SENSORS], SensorTimeType raw[REF_NOF_SENSORS]) {
@@ -369,5 +371,10 @@ void REF_Init(void) {
   if (FRTOS1_xTaskCreate(ReflTask, "Refl", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS) {
     for(;;){} /* error */
   }
+  mutexHandle = FRTOS1_xSemaphoreCreateMutex();
+    if (mutexHandle==NULL) {
+      for(;;);
+    }
+    FRTOS1_vQueueAddToRegistry(mutexHandle, "RefSem");
 }
 #endif /* PL_HAS_LINE_SENSOR */
