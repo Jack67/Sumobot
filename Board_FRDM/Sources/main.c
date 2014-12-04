@@ -96,6 +96,8 @@
 #include "../Common/NVM_Config.h"
 #include "../Common/Accel.h"
 #include "../Common/RNet_App.h"
+#include "AppFrdm.h"
+#include "Remote.h"
 
 
 void OnEvent(EVNT_Handle);
@@ -132,8 +134,12 @@ int main(void)
 
   //RNET1_Init();
   RNETA_Init();
+  REMOTE_Init();
 
   RTOS_Init();
+
+
+  APPFRDM_Init();
 
   RTOS_Run();
   for(;;){}

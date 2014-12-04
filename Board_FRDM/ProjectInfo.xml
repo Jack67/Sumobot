@@ -68,6 +68,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\RNet_App.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\RTOS.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Reflectance.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Remote.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Sem.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Shell.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\ShellQueue.c</PathName>
@@ -153,6 +154,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_framework.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\wdt_kinetis.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Project_Settings\Startup_Code\startup.c</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Sources\AppFrdm.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Sources\Events.c</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Sources\main.c</PathName>
     </GeneratedCs>
@@ -175,6 +177,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\RNet_AppConfig.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\RTOS.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Reflectance.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Remote.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Sem.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\Shell.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Common\ShellQueue.h</PathName>
@@ -276,6 +279,7 @@
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_framework.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\usb_user_config.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Generated_Code\wdt_kinetis.h</PathName>
+      <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Sources\AppFrdm.h</PathName>
       <PathName>G:\Tech\5Semester\INTRO\git\MyTeam\Board_FRDM\Sources\Events.h</PathName>
       <PathName>C:\Freescale\KDS_1.1.1\eclipse\ProcessorExpert\lib\Kinetis\iofiles\MKL25Z4.h</PathName>
       <PathName>C:\Freescale\KDS_1.1.1\eclipse\ProcessorExpert\lib\Kinetis\pdd\inc\ADC_PDD.h</PathName>
