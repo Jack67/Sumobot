@@ -68,6 +68,7 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\RNet_App.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\RTOS.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Reflectance.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Remote.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Sem.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Shell.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\ShellQueue.c</PathName>
@@ -75,6 +76,7 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Timer.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Trigger.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Ultrasonic.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Watchdog.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\ASerialLdd1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BT1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BUZ1.c</PathName>
@@ -169,6 +171,7 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\UTIL1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\Vectors.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\WAIT1.c</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\WDog1.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\croutine.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\event_groups.c</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\heap_1.c</PathName>
@@ -211,6 +214,7 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\RNet_AppConfig.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\RTOS.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Reflectance.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Remote.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Sem.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Shell.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\ShellQueue.h</PathName>
@@ -218,6 +222,7 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Timer.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Trigger.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Ultrasonic.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Common\Watchdog.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\ASerialLdd1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BT1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\BUZ1.h</PathName>
@@ -322,6 +327,7 @@
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\USB_Config.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\UTIL1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\WAIT1.h</PathName>
+      <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\WDog1.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\croutine.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\derivative.h</PathName>
       <PathName>C:\Git_Intro\Sumobot\Board_SUMOBOT\BOARD_SUMOBOT\Generated_Code\event_groups.h</PathName>

@@ -118,14 +118,14 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
 #if PL_HAS_WATCHDOG
       WDT_IncTaskCntr(WDT_TASK_ID_REMOTE, 200);
 #endif
-      FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
+      FRTOS1_vTaskDelay(200/portTICK_RATE_MS);
     }
     else
     {
 #if PL_HAS_WATCHDOG
       WDT_IncTaskCntr(WDT_TASK_ID_REMOTE, 1000);
 #endif
-      FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
+      FRTOS1_vTaskDelay(200/portTICK_RATE_MS);
     }
   } /* for */
 }
@@ -213,6 +213,7 @@ uint8_t REMOTE_HandleRemoteRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *
       x = (data[0])|(data[1]<<8);
       y = (data[2])|(data[3]<<8);
       z = (data[4])|(data[5]<<8);
+      /*
       if (REMOTE_isVerbose) {
         CLS1_SendStr((unsigned char*)"RX: x: ", io->stdOut);
         CLS1_SendNum16s(x, io->stdOut);
@@ -230,6 +231,7 @@ uint8_t REMOTE_HandleRemoteRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *
         UTIL1_strcat(buf, sizeof(buf), (unsigned char*)"\r\n");
         CLS1_SendStr(buf, io->stdOut);
       }
+      */
 #if PL_HAS_MOTOR
       REMOTE_HandleMsg(x, y, z);
 #endif
