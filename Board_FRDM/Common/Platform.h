@@ -56,6 +56,8 @@
 
 	#define PL_HAS_REMOTE 1
 	#define PL_APP_ACCEL_CONTROL_SENDER 1
+
+	#define PL_HAS_WATCHDOG 0
 #endif
 
 #ifdef PL_BOARD_IS_ROBOT
@@ -105,6 +107,8 @@
 	#define PL_HAS_RADIO 1
 
 	#define PL_HAS_REMOTE 1
+
+	#define PL_HAS_WATCHDOG 1
 #endif
 
 

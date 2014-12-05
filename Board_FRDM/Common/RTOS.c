@@ -19,11 +19,13 @@
 #include "Drive.h"
 #include "Buzzer.h"
 #include "Ultrasonic.h"
+#include "../Generated_Code/MMA1.h"
 
 #define MOTORSPEED			3000
 #define MOTORSEARCHSPEED	1000
 #define MOTOR_PAUSE			500
 
+#define Z_VALUE				1500
 
 #ifdef PL_BOARD_IS_ROBOT
 static portTASK_FUNCTION(Fight, pvParameters)
@@ -32,6 +34,10 @@ static portTASK_FUNCTION(Fight, pvParameters)
 	char search = 1;
 	uint16_t i;
 	uint16_t cm, us;
+
+	ACCEL_Enable();
+
+	(void)RAPP_SendPayloadDataBlock(&12, 1, RAPP_MSG_TYPE_DATA, APP_dstAddr, RPHY_PACKET_FLAGS_NONE);
 
 	for(;;) {
 		if(fight)
@@ -61,6 +67,14 @@ static portTASK_FUNCTION(Fight, pvParameters)
 					FRTOS1_vTaskDelay(10);
 				}
 			}
+			else
+			{
+				if(MMA1_GetZ() < Z_VALUE)
+				{
+					fight = 0;
+					DRV_SetSpeed(0,0);
+				}
+			}
 		}
 		else
 		{
@@ -80,6 +94,10 @@ static portTASK_FUNCTION(Fight, pvParameters)
 				fight = 1;
 				FRTOS1_vTaskDelay(4500);
 				BUZ_Beep(500, 500);
+				DRV_SetSpeed(MOTORSPEED,-MOTORSPEED);
+				FRTOS1_vTaskDelay(MOTOR_PAUSE);
+				DRV_SetSpeed(-MOTORSPEED,-MOTORSPEED);
+				FRTOS1_vTaskDelay(MOTOR_PAUSE);
 			}
 			FRTOS1_vTaskDelay(1);
 		}
