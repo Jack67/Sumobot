@@ -199,7 +199,7 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
 #if PL_HAS_MOTOR
 static void REMOTE_HandleMsg(int16_t x, int16_t y, int16_t z, uint8_t buttons)
 {
-	char mode = 1;
+	char mode = 0;
 
 	if(buttons & 0x01)				// Vollgas
 	{
@@ -225,6 +225,11 @@ static void REMOTE_HandleMsg(int16_t x, int16_t y, int16_t z, uint8_t buttons)
 	if(buttons & 0x20){}
 	if(buttons & 0x40)
 		BUZ_Beep(200, 200);
+
+	if(mode)
+	{
+		DRV_SetSpeed(y + x, y - x);
+	}
 }
 #endif
 
