@@ -19,6 +19,11 @@
 #include "Drive.h"
 #include "Buzzer.h"
 #include "Ultrasonic.h"
+#include "RNet_App.h"
+#include "Radio.h"
+#include "RStack.h"
+#include "RApp.h"
+#include "RPHY.h"
 #include "../Generated_Code/MMA1.h"
 
 #define MOTORSPEED			3000
@@ -32,12 +37,13 @@ static portTASK_FUNCTION(Fight, pvParameters)
 {
 	char fight = 0;
 	char search = 1;
+	char val = 12;
 	uint16_t i;
 	uint16_t cm, us;
 
 	ACCEL_Enable();
 
-	(void)RAPP_SendPayloadDataBlock(&12, 1, RAPP_MSG_TYPE_DATA, APP_dstAddr, RPHY_PACKET_FLAGS_NONE);
+	(void)RAPP_SendPayloadDataBlock(&val, 1, RAPP_MSG_TYPE_DATA, 0xFF, 0);
 
 	for(;;) {
 		if(fight)
