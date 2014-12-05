@@ -23,6 +23,7 @@
 #include "RPHY.h"
 #include "Shell.h"
 #include "Motor.h"
+#include "Remote.h"
 
 static RNWK_ShortAddrType APP_dstAddr = RNWK_ADDR_BROADCAST; /* destination node address */
 
@@ -75,6 +76,9 @@ static const RAPP_MsgHandler handlerTable[] =
 {
 #if RNET_CONFIG_REMOTE_STDIO
   RSTDIO_HandleStdioRxMessage,
+#endif
+#if PL_HAS_REMOTE
+  REMOTE_HandleRemoteRxMessage,
 #endif
   HandleDataRxMessage,
   NULL /* sentinel */

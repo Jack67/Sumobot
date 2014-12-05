@@ -104,7 +104,7 @@
 
 	#define PL_HAS_RADIO 1
 
-	#define PL_HAS_REMOTE 0
+	#define PL_HAS_REMOTE 1
 #endif
 
 
