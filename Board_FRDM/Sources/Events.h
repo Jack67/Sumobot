@@ -81,6 +81,8 @@
 #include "BitIoLdd12.h"
 #include "SM1.h"
 #include "SMasterLdd1.h"
+#include "AD1.h"
+#include "AdcLdd1.h"
 
 #ifdef __cplusplus
 extern "C" {

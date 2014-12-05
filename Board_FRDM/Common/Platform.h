@@ -56,6 +56,7 @@
 
 	#define PL_HAS_REMOTE 1
 	#define PL_APP_ACCEL_CONTROL_SENDER 1
+	#define PL_HAS_JOYSTICK 1
 
 	#define PL_HAS_WATCHDOG 0
 #endif
@@ -107,6 +108,7 @@
 	#define PL_HAS_RADIO 1
 
 	#define PL_HAS_REMOTE 1
+#define PL_HAS_JOYSTICK 0
 
 	#define PL_HAS_WATCHDOG 1
 #endif

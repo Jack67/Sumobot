@@ -59,7 +59,7 @@ static int8_t ToSigned8Bit(uint16_t val) {
 static uint8_t APP_GetXY(uint16_t *x, uint16_t *y, int8_t *x8, int8_t *y8) {
   uint8_t res;
   uint16_t values[2];
-/*
+
   res = AD1_Measure(TRUE);
   if (res!=ERR_OK) {
     return res;
@@ -72,7 +72,7 @@ static uint8_t APP_GetXY(uint16_t *x, uint16_t *y, int8_t *x8, int8_t *y8) {
   *y = values[1];
   // transform into -128...127 with zero as mid position
   *x8 = ToSigned8Bit(values[0]);
-  *y8 = ToSigned8Bit(values[1]);*/
+  *y8 = ToSigned8Bit(values[1]);
   values[0] = 0;
   values[1] = 0;
   return ERR_OK;
@@ -87,15 +87,24 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
 #if PL_HAS_ACCEL
       uint8_t buf[7];
       int16_t x, y, z;
+      int8_t x8, y8, z8;
 
       /* send periodically accelerometer messages */
-      ACCEL_GetValues(&x, &y, &z);
+      //ACCEL_GetValues(&x, &y, &z);
+      APP_GetXY(&x,&y,&x8,&y8);
+
+      x = (int16_t)x8*5;
+      y = (int16_t)y8*20;
+      z = 0;
+
       buf[0] = (uint8_t)(x&0xFF);
       buf[1] = (uint8_t)(x>>8);
       buf[2] = (uint8_t)(y&0xFF);
       buf[3] = (uint8_t)(y>>8);
       buf[4] = (uint8_t)(z&0xFF);
       buf[5] = (uint8_t)(z>>8);
+
+
       buf[6] = 0;
 
 
