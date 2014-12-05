@@ -34,19 +34,19 @@ static portTASK_FUNCTION(T3, pvParameters)
 		switch(status)
 		{
 		case 0:
-			LED_Red_On();
-			//LED_Blue_Off();
-			LED_Green_Off();
+			//LED_Red_On();
+
+			//LED_Green_Off();
 			break;
 		case 1:
-			LED_Red_Off();
-			//LED_Blue_On();
-			LED_Green_Off();
+			//LED_Red_Off();
+
+			//LED_Green_Off();
 			break;
 		case 2:
-			LED_Red_Off();
-			//LED_Blue_Off();
-			LED_Green_On();
+			//LED_Red_Off();
+
+			//LED_Green_On();
 			break;
 		}
 
@@ -54,8 +54,8 @@ static portTASK_FUNCTION(T3, pvParameters)
 
 
 
-
-    	FRTOS1_vTaskDelay(1000);
+		KEY_Scan();
+    	FRTOS1_vTaskDelay(50);
     	status = (status+1) % 3;
 	}
 }
