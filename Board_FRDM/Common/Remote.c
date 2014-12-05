@@ -37,6 +37,8 @@
 
 #include "Keys.h"
 #include "Event.h"
+#include "LED.h"
+#include "Buzzer.h"
 
 static bool REMOTE_isOn = FALSE;
 static bool REMOTE_isVerbose = FALSE;
@@ -97,7 +99,7 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
       buf[6] = 0;
 
 
-      KEY_Scan();
+      //KEY_Scan();
       if (EVNT_EventIsSet(EVNT_SW1_PRESSED))
       {
     	  EVNT_ClearEvent(EVNT_SW1_PRESSED);
@@ -186,68 +188,34 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
 #endif
 
 #if PL_HAS_MOTOR
-static void REMOTE_HandleMsg(int16_t x, int16_t y, int16_t z) {
-  #define SCALE_DOWN 30
-  #define MIN_VALUE  250 /* values below this value are ignored */
-  #define DRIVE_DOWN 1
+static void REMOTE_HandleMsg(int16_t x, int16_t y, int16_t z, uint8_t buttons)
+{
+	char mode = 1;
 
-  if (!REMOTE_isOn) {
-    return;
-  }
-  if (y>950 || y<-950) { /* have a way to stop motor: turn SRB USB port side up or down */
-#if PL_HAS_DRIVE
-    DRV_SetSpeed(0, 0);
-#else
-    MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 0);
-    MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 0);
-#endif
-  } else if ((y>MIN_VALUE || y<-MIN_VALUE) && (x>MIN_VALUE || x<-MIN_VALUE)) { /* x: speed, y: direction */
-    int16_t speed, speedL, speedR;
-    
-    speed = x/SCALE_DOWN;
-    if (y<0) {
-      if (speed<0) {
-        speedR = speed+(y/SCALE_DOWN);
-      } else {
-        speedR = speed-(y/SCALE_DOWN);
-      }
-      speedL = speed;
-    } else {
-      speedR = speed;
-      if (speed<0) {
-        speedL = speed-(y/SCALE_DOWN);
-      } else {
-        speedL = speed+(y/SCALE_DOWN);
-      }
-    }
-#if PL_HAS_DRIVE
-    DRV_SetSpeed(speedL*SCALE_DOWN/DRIVE_DOWN, speedR*SCALE_DOWN/DRIVE_DOWN);
-#else
-    MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), speedL);
-    MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), speedR);
-#endif
-  } else if (x>100 || x<-100) { /* speed */
-#if PL_HAS_DRIVE
-    DRV_SetSpeed(-x, -x);
-#else
-    MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), -x/SCALE_DOWN);
-    MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), -x/SCALE_DOWN);
-#endif
-  } else if (y>100 || y<-100) { /* direction */
-#if PL_HAS_DRIVE
-    DRV_SetSpeed(-y/DRIVE_DOWN, y/DRIVE_DOWN);
-#else
-    MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), -y/SCALE_DOWN);
-    MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), (y/SCALE_DOWN));
-#endif
-  } else { /* device flat on the table? */
-#if PL_HAS_DRIVE
-    DRV_SetSpeed(0, 0);
-#else
-    MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_LEFT), 0);
-    MOT_SetSpeedPercent(MOT_GetMotorHandle(MOT_MOTOR_RIGHT), 0);
-#endif
-  }
+	if(buttons & 0x01)				// Vollgas
+	{
+		DRV_SetSpeed(8000,8000);
+		mode = 0;
+	}
+	if(buttons & 0x02)				// Ausweichen
+	{
+		mode = 0;
+		mode = 1;
+	}
+	if(buttons & 0x04)				// Normal mode
+	{
+		mode = 1;
+		DRV_SetSpeed(2000,2000);
+	}
+	if(buttons & 0x08)				// Stop
+	{
+		DRV_SetSpeed(0,0);
+		mode = 0;
+	}
+	if(buttons & 0x10){}
+	if(buttons & 0x20){}
+	if(buttons & 0x40)
+		BUZ_Beep(200, 200);
 }
 #endif
 
@@ -257,6 +225,7 @@ uint8_t REMOTE_HandleRemoteRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *
   CLS1_ConstStdIOTypePtr io = CLS1_GetStdio();
 #endif
   int16_t x, y, z;
+  uint8_t buttons;
   
   (void)size;
   (void)packet;
@@ -267,6 +236,7 @@ uint8_t REMOTE_HandleRemoteRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *
       x = (data[0])|(data[1]<<8);
       y = (data[2])|(data[3]<<8);
       z = (data[4])|(data[5]<<8);
+      buttons = data[6];
       /*
       if (REMOTE_isVerbose) {
         CLS1_SendStr((unsigned char*)"RX: x: ", io->stdOut);
@@ -287,7 +257,7 @@ uint8_t REMOTE_HandleRemoteRxMessage(RAPP_MSG_Type type, uint8_t size, uint8_t *
       }
       */
 #if PL_HAS_MOTOR
-      REMOTE_HandleMsg(x, y, z);
+      REMOTE_HandleMsg(x, y, z, buttons);
 #endif
       return ERR_OK;
     default:

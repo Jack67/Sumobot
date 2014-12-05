@@ -43,7 +43,7 @@ static portTASK_FUNCTION(Fight, pvParameters)
 
 	ACCEL_Enable();
 
-	(void)RAPP_SendPayloadDataBlock(&val, 1, RAPP_MSG_TYPE_DATA, 0xFF, 0);
+	//(void)RAPP_SendPayloadDataBlock(&val, 1, RAPP_MSG_TYPE_DATA, 0xFF, 0);
 
 	for(;;) {
 		if(fight)
