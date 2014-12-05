@@ -117,6 +117,7 @@
 #include "ExtIntLdd1.h"
 #include "SM2_nRF.h"
 #include "SMasterLdd1.h"
+#include "WDog1.h"
 
 #ifdef __cplusplus
 extern "C" {

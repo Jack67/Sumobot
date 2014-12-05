@@ -113,6 +113,7 @@
 #include "ExtIntLdd1.h"
 #include "SM2_nRF.h"
 #include "SMasterLdd1.h"
+#include "WDog1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
