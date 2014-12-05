@@ -111,14 +111,17 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
         UTIL1_strcat(txtBuf, sizeof(txtBuf), (unsigned char*)"\r\n");
         CLS1_SendStr(txtBuf, io->stdOut);
       }
+
       (void)RAPP_SendPayloadDataBlock(buf, sizeof(buf), RAPP_MSG_TYPE_ACCEL, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_REQ_ACK);
       //LED1_Neg();
 #endif
 #if PL_HAS_WATCHDOG
       WDT_IncTaskCntr(WDT_TASK_ID_REMOTE, 200);
 #endif
-      FRTOS1_vTaskDelay(200/portTICK_RATE_MS);
-    } else {
+      FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
+    }
+    else
+    {
 #if PL_HAS_WATCHDOG
       WDT_IncTaskCntr(WDT_TASK_ID_REMOTE, 1000);
 #endif
