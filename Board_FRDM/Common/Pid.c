@@ -25,6 +25,7 @@ typedef struct {
 
 /*! \todo Add your own additional configurations as needed, at least with a position config */
 static PID_Config speedLeftConfig, speedRightConfig;
+static PID_Config posLeftConfig, posRightConfig;
 
 static int32_t PID(int32_t currVal, int32_t setVal, PID_Config *config) {
   int32_t error;
@@ -82,6 +83,15 @@ void PID_Speed(int32_t currSpeed, int32_t setSpeed, bool isLeft) {
 
 void PID_Pos(int32_t currPos, int32_t setPos, bool isLeft) {
   /*! \todo Implement position PID */
+	if(isLeft)
+	{
+		//PID(currPos, setPos, PID_Config *posLeftConfig);
+	}
+	else
+	{
+		//PID(currPos, setPos, PID_Config *posRightConfig);
+	}
+
 }
 
 #if PL_HAS_SHELL
@@ -89,6 +99,7 @@ static void PID_PrintHelp(const CLS1_StdIOType *io) {
   CLS1_SendHelpStr((unsigned char*)"pid", (unsigned char*)"Group of PID commands\r\n", io->stdOut);
   CLS1_SendHelpStr((unsigned char*)"  help|status", (unsigned char*)"Shows PID help or status\r\n", io->stdOut);
   CLS1_SendHelpStr((unsigned char*)"  speed (L|R) (p|d|i|w) <value>", (unsigned char*)"Sets P, D, I or anti-windup position value\r\n", io->stdOut);
+  CLS1_SendHelpStr((unsigned char*)"  position (L|R) (p|d|i|w) <value>", (unsigned char*)"Sets P, D, I or anti-windup position value\r\n", io->stdOut);
 }
 
 static void PrintPIDstatus(PID_Config *config, const unsigned char *kindStr, const CLS1_StdIOType *io) {
@@ -119,6 +130,8 @@ static void PID_PrintStatus(const CLS1_StdIOType *io) {
   CLS1_SendStatusStr((unsigned char*)"pid", (unsigned char*)"\r\n", io->stdOut);
   PrintPIDstatus(&speedLeftConfig, (unsigned char*)"speed L", io);
   PrintPIDstatus(&speedRightConfig, (unsigned char*)"speed R", io);
+  PrintPIDstatus(&posLeftConfig, (unsigned char*)"position L", io);
+  PrintPIDstatus(&posRightConfig, (unsigned char*)"position R", io);
 }
 
 static uint8_t ParsePidParameter(PID_Config *config, const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io) {
@@ -180,6 +193,14 @@ uint8_t PID_ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_Std
   } else if (UTIL1_strncmp((char*)cmd, (char*)"pid speed R ", sizeof("pid speed R ")-1)==0) {
     res = ParsePidParameter(&speedRightConfig, cmd+sizeof("pid speed R ")-1, handled, io);
   }
+  else if (UTIL1_strncmp((char*)cmd, (char*)"pid position L ", sizeof("pid position L ")-1)==0)
+  {
+    res = ParsePidParameter(&posLeftConfig, cmd+sizeof("pid position L ")-1, handled, io);
+  }
+  else if (UTIL1_strncmp((char*)cmd, (char*)"pid position R ", sizeof("pid position L ")-1)==0)
+  {
+     res = ParsePidParameter(&posRightConfig, cmd+sizeof("pid position R ")-1, handled, io);
+  }
   return res;
 }
 #endif /* PL_HAS_SHELL */
@@ -210,5 +231,19 @@ void PID_Init(void) {
   speedRightConfig.iAntiWindup = 200000;
   speedRightConfig.lastError = 0;
   speedRightConfig.integral = 0;
+
+  posLeftConfig.pFactor100 = 2000;
+  posLeftConfig.iFactor100 = 10;
+  posLeftConfig.dFactor100 = 0;
+  posLeftConfig.iAntiWindup = 200000;
+  posLeftConfig.lastError = 0;
+  posLeftConfig.integral = 0;
+
+  posRightConfig.pFactor100 = 2000;
+  posRightConfig.iFactor100 = 10;
+  posRightConfig.dFactor100 = 0;
+  posRightConfig.iAntiWindup = 200000;
+  posRightConfig.lastError = 0;
+  posRightConfig.integral = 0;
 }
 #endif /* PL_HAS_PID */
