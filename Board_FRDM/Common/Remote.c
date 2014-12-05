@@ -35,6 +35,9 @@
   #include "AD1.h"
 #endif
 
+#include "Keys.h"
+#include "Event.h"
+
 static bool REMOTE_isOn = FALSE;
 static bool REMOTE_isVerbose = FALSE;
 
@@ -80,7 +83,7 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
     if (REMOTE_isOn)
     {
 #if PL_HAS_ACCEL
-      uint8_t buf[6];
+      uint8_t buf[7];
       int16_t x, y, z;
 
       /* send periodically accelerometer messages */
@@ -91,7 +94,50 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
       buf[3] = (uint8_t)(y>>8);
       buf[4] = (uint8_t)(z&0xFF);
       buf[5] = (uint8_t)(z>>8);
-      if (REMOTE_isVerbose) {
+      buf[6] = 0;
+
+
+      KEY_Scan();
+      if (EVNT_EventIsSet(EVNT_SW1_PRESSED))
+      {
+    	  EVNT_ClearEvent(EVNT_SW1_PRESSED);
+    	  buf[6] |= 0x01;
+      }
+      if (EVNT_EventIsSet(EVNT_SW2_PRESSED))
+      {
+          EVNT_ClearEvent(EVNT_SW2_PRESSED);
+          buf[6] |= 0x02;
+      }
+      if (EVNT_EventIsSet(EVNT_SW3_PRESSED))
+      {
+          EVNT_ClearEvent(EVNT_SW3_PRESSED);
+          buf[6] |= 0x04;
+      }
+      if (EVNT_EventIsSet(EVNT_SW4_PRESSED))
+      {
+          EVNT_ClearEvent(EVNT_SW4_PRESSED);
+          buf[6] |= 0x08;
+      }
+      if (EVNT_EventIsSet(EVNT_SW5_PRESSED))
+      {
+          EVNT_ClearEvent(EVNT_SW5_PRESSED);
+          buf[6] |= 0x10;
+      }
+      if (EVNT_EventIsSet(EVNT_SW6_PRESSED))
+      {
+          EVNT_ClearEvent(EVNT_SW6_PRESSED);
+          buf[6] |= 0x20;
+      }
+      if (EVNT_EventIsSet(EVNT_SW7_PRESSED))
+      {
+          EVNT_ClearEvent(EVNT_SW7_PRESSED);
+          buf[6] |= 0x40;
+      }
+
+
+
+      if (REMOTE_isVerbose)
+      {
         uint8_t txtBuf[16];
         CLS1_ConstStdIOTypePtr io = CLS1_GetStdio();
 
@@ -101,6 +147,8 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
         CLS1_SendNum16s(y, io->stdOut);
         CLS1_SendStr((unsigned char*)" z: ", io->stdOut);
         CLS1_SendNum16s(z, io->stdOut);
+        CLS1_SendStr((unsigned char*)" t: ", io->stdOut);
+        CLS1_SendNum8s(buf[6], io->stdOut);
         CLS1_SendStr((unsigned char*)" to addr 0x", io->stdOut);
         txtBuf[0] = '\0';
   #if RNWK_SHORT_ADDR_SIZE==1
@@ -111,6 +159,12 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
         UTIL1_strcat(txtBuf, sizeof(txtBuf), (unsigned char*)"\r\n");
         CLS1_SendStr(txtBuf, io->stdOut);
       }
+
+
+
+
+
+
 
       (void)RAPP_SendPayloadDataBlock(buf, sizeof(buf), RAPP_MSG_TYPE_ACCEL, RNETA_GetDestAddr(), RPHY_PACKET_FLAGS_REQ_ACK);
       //LED1_Neg();
