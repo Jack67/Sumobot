@@ -18,19 +18,20 @@
 #include "Accel.h"
 #include "Drive.h"
 
-char status = 0;
+//char status = 0;
 static portTASK_FUNCTION(T3, pvParameters)
 {
 
-	char* pstatus = (char*)NVMC_GetStatus();
+	//char* pstatus = (char*)NVMC_GetStatus();
 	ACCEL_LowLevelInit();
-	if(pstatus != NULL)
-	{
-		status = *pstatus;
-	}
+	//if(pstatus != NULL)
+//	{
+//		status = *pstatus;
+//	}
 
 	for(;;)
 	{
+		/*
 		switch(status)
 		{
 		case 0:
@@ -51,12 +52,12 @@ static portTASK_FUNCTION(T3, pvParameters)
 		}
 
 
-
+		*/
 
 
 		KEY_Scan();
     	FRTOS1_vTaskDelay(50);
-    	status = (status+1) % 3;
+    	//status = (status+1) % 3;
 	}
 }
 
