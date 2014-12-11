@@ -96,8 +96,8 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
       //ACCEL_GetValues(&x, &y, &z);
       APP_GetXY(&x,&y,&x8,&y8);
 
-      x = (int16_t)x8*5;
-      y = (int16_t)y8*20;
+      x = (int16_t)x8*20;
+      y = ((int16_t)y8*20);
       z = 0;
 
       buf[0] = (uint8_t)(x&0xFF);
@@ -340,7 +340,7 @@ void REMOTE_Deinit(void) {
 /*! \brief Initializes module */
 void REMOTE_Init(void) {
   REMOTE_isOn = TRUE;
-  REMOTE_isVerbose = TRUE;
+  REMOTE_isVerbose = FALSE;
 #if PL_APP_ACCEL_CONTROL_SENDER
   if (FRTOS1_xTaskCreate(RemoteTask, "Remote", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL) != pdPASS) {
     for(;;){} /* error */
