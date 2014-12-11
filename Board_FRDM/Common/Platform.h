@@ -90,7 +90,7 @@
 
 	#define PL_HAS_MOTOR 1
 
-	#define PL_HAS_CONFIG_NVM 0
+	#define PL_HAS_CONFIG_NVM 1
 	#define PL_IS_ROBO 1
 
 	#define PL_HAS_QUAD_CALIBRATION 1

@@ -25,10 +25,12 @@
 #include "RApp.h"
 #include "RPHY.h"
 #include "../Generated_Code/MMA1.h"
+#include "Remote.h"
+#include "NVM_Config.h"
 
-#define MOTORSPEED			3000
-#define MOTORSEARCHSPEED	1000
-#define MOTOR_PAUSE			500
+#define MOTORSPEED			4000
+#define MOTORSEARCHSPEED	2500
+#define MOTOR_PAUSE			400
 
 #define Z_VALUE				1500
 
@@ -37,9 +39,16 @@ static portTASK_FUNCTION(Fight, pvParameters)
 {
 	char fight = 0;
 	char search = 1;
+	char cnt = 0;
 	char val = 12;
 	uint16_t i;
 	uint16_t cm, us;
+
+	char* pfight = (char*)NVMC_GetStatus();
+	if(pfight != NULL)
+	{
+		fight = *pfight;
+	}
 
 	ACCEL_Enable();
 
@@ -66,20 +75,28 @@ static portTASK_FUNCTION(Fight, pvParameters)
 					DRV_SetSpeed(MOTORSPEED,MOTORSPEED);
 					search = 0;
 				}
-				for(i = 0; i < 30; i++)
+				for(i = 0; i < 10; i++)
 				{
 					if(isColorWhite())
 						break;
 					FRTOS1_vTaskDelay(10);
 				}
-			}
-			else
-			{
-				if(MMA1_GetZ() < Z_VALUE)
+				cnt ++;
+				if(cnt >= 20)
 				{
-					fight = 0;
-					DRV_SetSpeed(0,0);
+					DRV_SetSpeed(MOTORSPEED,MOTORSPEED);
+					search = 0;
+					cnt = 0;
 				}
+			}
+			KEY_Scan();
+			if(EVNT_EventIsSet(EVNT_SW1_LPRESSED))
+			{
+				EVNT_ClearEvent(EVNT_SW1_LPRESSED);
+				fight = 0;
+				NVMC_SaveStatus(&fight,1);
+				DRV_SetSpeed(0,0);
+				FRTOS1_vTaskDelay(2000);
 			}
 		}
 		else
@@ -96,14 +113,29 @@ static portTASK_FUNCTION(Fight, pvParameters)
 			if (EVNT_EventIsSet(EVNT_SW1_PRESSED))
 			{
 				EVNT_ClearEvent(EVNT_SW1_PRESSED);
-				BUZ_Beep(100, 200);
 				fight = 1;
-				FRTOS1_vTaskDelay(4500);
+				NVMC_SaveStatus(&fight,1);
+				REMOTE_SetOnOff(FALSE);
+				BUZ_Beep(200, 500);
+				FRTOS1_vTaskDelay(500);
 				BUZ_Beep(500, 500);
-				DRV_SetSpeed(MOTORSPEED,-MOTORSPEED);
-				FRTOS1_vTaskDelay(MOTOR_PAUSE);
-				DRV_SetSpeed(-MOTORSPEED,-MOTORSPEED);
-				FRTOS1_vTaskDelay(MOTOR_PAUSE);
+				FRTOS1_vTaskDelay(500);
+				BUZ_Beep(200, 500);
+				FRTOS1_vTaskDelay(500);
+				BUZ_Beep(500, 500);
+				FRTOS1_vTaskDelay(500);
+				BUZ_Beep(200, 500);
+				FRTOS1_vTaskDelay(500);
+				BUZ_Beep(500, 500);
+				FRTOS1_vTaskDelay(500);
+				BUZ_Beep(200, 500);
+				FRTOS1_vTaskDelay(500);
+				BUZ_Beep(500, 500);
+				FRTOS1_vTaskDelay(500);
+				BUZ_Beep(200, 500);
+				FRTOS1_vTaskDelay(500);
+				BUZ_Beep(500, 500);
+				FRTOS1_vTaskDelay(500);
 			}
 			FRTOS1_vTaskDelay(1);
 		}
