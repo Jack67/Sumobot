@@ -116,7 +116,8 @@ void PID_Pos(int32_t currPos, int32_t setPos, bool isLeft) {
   /*! \todo Implement position PID */
 	if(isLeft)
 	{
-		PID_PosCfg(currPos, setPos, isLeft, &posLeftConfig);
+		//PID_PosCfg(currPos, setPos, isLeft, &posLeftConfig);
+		PID_SpeedCfg(0,currPos-setPos,isLeft,&posLeftConfig);
 	}
 	else
 	{
@@ -263,17 +264,17 @@ void PID_Init(void) {
   speedRightConfig.lastError = 0;
   speedRightConfig.integral = 0;
 
-  posLeftConfig.pFactor100 = 2000;
+  posLeftConfig.pFactor100 = 200;
   posLeftConfig.iFactor100 = 10;
   posLeftConfig.dFactor100 = 0;
-  posLeftConfig.iAntiWindup = 200000;
+  posLeftConfig.iAntiWindup = 2000;
   posLeftConfig.lastError = 0;
   posLeftConfig.integral = 0;
 
-  posRightConfig.pFactor100 = 2000;
+  posRightConfig.pFactor100 = 200;
   posRightConfig.iFactor100 = 10;
   posRightConfig.dFactor100 = 0;
-  posRightConfig.iAntiWindup = 200000;
+  posRightConfig.iAntiWindup = 2000;
   posRightConfig.lastError = 0;
   posRightConfig.integral = 0;
 }
