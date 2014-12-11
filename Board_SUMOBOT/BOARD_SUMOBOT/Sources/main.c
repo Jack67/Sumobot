@@ -182,6 +182,7 @@ int main(void)
   ACCEL_Init();
   RNETA_Init();
   REMOTE_Init();
+  NVMC_Init();
 
   RTOS_Init();
   RTOS_Run();

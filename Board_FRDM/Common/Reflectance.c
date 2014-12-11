@@ -23,6 +23,7 @@
 //#include "Application.h"
 #include "Event.h"
 #include "Shell.h"
+#include "NVM_Config.h"
 
 #define REF_NOF_SENSORS 6 /* number of sensors */
 #define IR_TIMEOUT		46875 /* 100ms */
@@ -94,6 +95,12 @@ static const SensorFctType SensorFctArray[REF_NOF_SENSORS] = {
   {S5_SetOutput, S5_SetInput, S5_SetVal, S5_GetVal},
   {S6_SetOutput, S6_SetInput, S6_SetVal, S6_GetVal},
 };
+
+void REF_CalibrateStartStop(void) {
+  if (refState==REF_STATE_NOT_CALIBRATED || refState==REF_STATE_CALIBRATING || refState==REF_STATE_READY) {
+    EVNT_SetEvent(EVNT_REF_START_STOP_CALIBRATION);
+  }
+}
 
 static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
   uint8_t cnt; /* number of sensor */
@@ -279,8 +286,22 @@ static void REF_StateMachine(void) {
 
   switch (refState) {
     case REF_STATE_INIT:
+    {
+      SensorCalibT *SensorCalibMinMaxPtr;
+
+      SensorCalibMinMaxPtr = (SensorCalibT*)NVMC_GetReflectanceData();
+      if (SensorCalibMinMaxPtr!=NULL) { /* use calibration data from FLASH */
+        SensorCalibMinMax = *SensorCalibMinMaxPtr; /* struct copy */
+        refState = REF_STATE_READY;
+      } else {
+        SHELL_SendString((unsigned char*)"INFO: No calibration data present.\r\n");
+        refState = REF_STATE_NOT_CALIBRATED;
+      }
+    }
+    	/*
       SHELL_SendString((unsigned char*)"INFO: No calibration data present.\r\n");
       refState = REF_STATE_NOT_CALIBRATED;
+      */
       break;
       
     case REF_STATE_NOT_CALIBRATED:
@@ -313,6 +334,9 @@ static void REF_StateMachine(void) {
     
     case REF_STATE_STOP_CALIBRATION:
       SHELL_SendString((unsigned char*)"...stopping calibration.\r\n");
+      if (NVMC_SaveReflectanceData((void*)&SensorCalibMinMax, sizeof(SensorCalibMinMax))!=ERR_OK) {
+        SHELL_SendString((unsigned char*)"FAILED saving calibration.\r\n");
+      }
       refState = REF_STATE_READY;
       break;
         

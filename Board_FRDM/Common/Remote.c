@@ -40,6 +40,9 @@
 #include "LED.h"
 #include "Buzzer.h"
 
+#define MOTORSPEED			4000
+#define MOTOR_PAUSE			200
+
 static bool REMOTE_isOn = FALSE;
 static bool REMOTE_isVerbose = FALSE;
 
@@ -199,27 +202,27 @@ static portTASK_FUNCTION(RemoteTask, pvParameters)
 #if PL_HAS_MOTOR
 static void REMOTE_HandleMsg(int16_t x, int16_t y, int16_t z, uint8_t buttons)
 {
-	char mode = 0;
+	static char mode = 0;
 
 	if(buttons & 0x01)				// Vollgas
 	{
 		DRV_SetSpeed(8000,8000);
 		mode = 0;
 	}
-	if(buttons & 0x02)				// Ausweichen
+	if(buttons & 0x02)				// Drehung rechts
 	{
-		mode = 0;
 		mode = 1;
+		DRV_SetSpeed(0,0);
 	}
 	if(buttons & 0x04)				// Normal mode
 	{
 		mode = 1;
-		DRV_SetSpeed(2000,2000);
-	}
-	if(buttons & 0x08)				// Stop
-	{
 		DRV_SetSpeed(0,0);
-		mode = 0;
+	}
+	if(buttons & 0x08)				// Drehung links
+	{
+		mode = 1;
+		DRV_SetSpeed(0,0);
 	}
 	if(buttons & 0x10){}
 	if(buttons & 0x20){}
