@@ -36,6 +36,10 @@ void DRV_EnableDisable(bool enable);
  */
 void DRV_SetSpeed(int32_t left, int32_t right);
 
+void PosDriveEnable(bool enable);
+
+void DRV_SetSpeed(int32_t left, int32_t right);
+
 /*! \brief Driver initialization */
 void DRV_Init(void);
 

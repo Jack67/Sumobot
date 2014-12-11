@@ -81,15 +81,46 @@ void PID_Speed(int32_t currSpeed, int32_t setSpeed, bool isLeft) {
   }
 }
 
+void PID_PosCfg(int32_t currPos, int32_t setPos, bool isLeft, PID_Config *config) {
+  int32_t pos;
+  int32_t speed;
+  MOT_Direction direction=MOT_DIR_FORWARD;
+  MOT_MotorDevice *motHandle;
+
+
+  pos = PID(currPos, setPos, config);
+  if (pos>=0) {
+    direction = MOT_DIR_FORWARD;
+  } else { /* negative, make it positive */
+    pos = -pos; /* make positive */
+    direction = MOT_DIR_BACKWARD;
+  }
+  /* speed shall be positive here, make sure it is within 16bit PWM boundary */
+  if (pos>0xFFFF) {
+    pos = 0xFFFF;
+  }
+  /* send new speed values to motor */
+  if (isLeft) {
+    motHandle = MOT_GetMotorHandle(MOT_MOTOR_LEFT);
+  } else {
+    motHandle = MOT_GetMotorHandle(MOT_MOTOR_RIGHT);
+  }
+  speed=pos;
+  MOT_SetVal(motHandle, 0xFFFF-speed); /* PWM is low active */
+  MOT_SetDirection(motHandle, direction);
+  MOT_UpdatePercent(motHandle, direction);
+}
+
+
 void PID_Pos(int32_t currPos, int32_t setPos, bool isLeft) {
   /*! \todo Implement position PID */
 	if(isLeft)
 	{
-		//PID(currPos, setPos, PID_Config *posLeftConfig);
+		PID_PosCfg(currPos, setPos, isLeft, &posLeftConfig);
 	}
 	else
 	{
-		//PID(currPos, setPos, PID_Config *posRightConfig);
+		PID_PosCfg(currPos, setPos, isLeft, &posRightConfig);
 	}
 
 }
